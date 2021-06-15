@@ -1,4 +1,7 @@
 {
   "name": "StPeteRising",
-  "private": "true"
+  "private": "true",
+  "dependencies": {
+    "react-icons": "^4.2.0"
+  }
 }
