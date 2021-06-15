@@ -1,3 +1,8 @@
+import facebook from './images/facebook.svg'
+import instagram from './images/instagram.svg'
+import twitter from './images/twitter.svg'
+import linkedin from './images/linkedin.svg'
+
 export function Home() {
   return (
     <>
@@ -18,7 +23,14 @@ export function Home() {
           <li></li>
         </ul>
       </main>
-      <footer>Terms of Use - Privacy Policy © 2021 St. Pete Rising, LLC</footer>
+
+      <footer>
+        <img src={facebook} alt="Facebook icon" width="35" height="35" />
+        <img src={instagram} alt="Facebook icon" width="35" height="35" />
+        <img src={twitter} alt="Facebook icon" width="35" height="35" />
+        <img src={linkedin} alt="Facebook icon" width="35" height="35" />
+        Terms of Use - Privacy Policy © 2021 St. Pete Rising, LLC
+      </footer>
     </>
   )
 }
