@@ -11,21 +11,17 @@ body {
   min-height: 100%;
 }
 
+#root {
+  min-height: 100vh;
+}
+
 /* Style The Dropdown Button */
 .dropbtn {
-  background-color: white;
-  color: black;
   padding: 16px;
   font-size: 16px;
   border: none;
   cursor: pointer;
 }
-
-/* The container <div> - needed to position the dropdown content */
-// .dropdown {
-//   position: relative;
-//   display: inline-block;
-// }
 
 /* Dropdown Content (Hidden by Default) */
 .dropdown-content {
@@ -47,17 +43,12 @@ body {
 
 /* Change color of dropdown links on hover */
 .dropdown-content a:hover {
-  background-color: lightgrey;
+  background-color: rgb(176, 150, 55);
 }
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-  background-color: white;
 }
 
 /* Needed to position the navbar */
@@ -69,4 +60,75 @@ body {
   position: absolute;
   margin: 20px;
   width: auto;
+}
+
+/* Container holding the image and the text */
+.text-container {
+  position: relative;
+  color: white;
+}
+
+/* Center text over image */
+.text-centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  letter-spacing: 1px;
+  text-shadow: 3px 3px black;
+  font-style: italic;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  .main {
+    flex-grow: 1;
+    display: grid;
+  }
+}
+
+h1 {
+  padding: 0.5rem;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.search-bar {
+  border-radius: 3px;
+  text-align: center;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.social-media {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icon {
+  margin-left: 1rem;
+}
+
+.social-icon:hover {
+  opacity: 65%;
+}
+.login {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 1rem;
+  padding: 8rem;
 }
