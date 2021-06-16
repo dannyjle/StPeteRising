@@ -4,30 +4,44 @@ import twitter from './images/twitter.svg'
 import linkedin from './images/linkedin.svg'
 import list from './images/list.svg'
 import filter from './images/filter.svg'
+import spr from './images/sprlogo.png'
+import dtspSky from './images/dtspskyline.jpeg'
 
 export function Home() {
   return (
     <>
-      <img
-        className="navButton"
-        src={list}
-        alt="nav dropdown"
-        width="35"
-        height="35"
-      />
+      <div className="spr-img">
+        <div className="container">
+          <div className="dropdown">
+            <img src={list} alt="nav dropdown" width="35" height="35" />
+            <div className="dropdown-content">
+              <a href="#">Home</a>
+              <a href="#">Developments</a>
+              <a href="#">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
       <header>
-        <h1>St. Pete Rising</h1>
-        <h2>(Link Name)</h2>
-        <ul>
-          <li>Home</li>
-          <li>Developments</li>
-          <li>Login</li>
-        </ul>
+        <h1>
+          <a to="/">
+            <img src={spr} alt="St.Pete Rising Logo" width="495" height="255" />
+          </a>
+        </h1>
+        <h2>
+          <img src={dtspSky} alt="nav dropdown" width="495" height="255" />
+          (Link Name)
+        </h2>
       </header>
       <form>
         <input type="text" placeholder="&#x1F50D; Search"></input>
-        <div className="filterButton">
-          <img src={filter} alt="filter content" width="25" height="25" />
+        <div className="dropdown">
+          <img src={filter} alt="filter content" width="35" height="35" />
+          <div className="dropdown-content">
+            <a href="#">Last Updated</a>
+            <a href="#">By Date Added</a>
+            <a href="#">A-Z</a>
+          </div>
         </div>
       </form>
       <main>
