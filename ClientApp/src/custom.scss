@@ -15,6 +15,13 @@ body {
   min-height: 100vh;
 }
 
+@media screen and (max-width: 480px) {
+  .spr-logo,
+  .dtsp-skyline {
+    width: 375px;
+  }
+}
+
 /* Style The Dropdown Button */
 .dropbtn {
   padding: 16px;
