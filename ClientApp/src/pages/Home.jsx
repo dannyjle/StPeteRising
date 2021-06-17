@@ -28,6 +28,7 @@ export function Home() {
           <h1>
             <a to="/">
               <img
+                className="spr-logo"
                 src={spr}
                 alt="St.Pete Rising Logo"
                 width="475"
@@ -36,7 +37,13 @@ export function Home() {
             </a>
           </h1>
           <h2 className="text-container">
-            <img src={dtspSky} alt="nav dropdown" width="495" height="200" />
+            <img
+              className="dtsp-skyline"
+              src={dtspSky}
+              alt="nav dropdown"
+              width="495"
+              height="200"
+            />
             <div className="text-centered">(Link Name)</div>
           </h2>
         </header>

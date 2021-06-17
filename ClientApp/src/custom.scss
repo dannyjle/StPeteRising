@@ -91,6 +91,19 @@ body {
   }
 }
 
+h1,
+a,
+.spr-logo {
+  display: flex;
+  justify-content: center;
+}
+
+h2,
+.dtsp-skyline {
+  display: flex;
+  justify-content: center;
+}
+
 h1 {
   padding: 0.5rem;
 }
@@ -123,8 +136,9 @@ footer {
 }
 
 .social-icon:hover {
-  opacity: 65%;
+  opacity: 55%;
 }
+
 .login {
   justify-content: center;
   flex-direction: column;
