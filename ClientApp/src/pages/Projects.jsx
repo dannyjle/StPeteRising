@@ -6,7 +6,7 @@ import list from './images/list.svg'
 import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
 
-export function Developments() {
+export function Projects() {
   return (
     <>
       <div className="layout">
