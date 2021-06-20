@@ -15,9 +15,10 @@ body {
   min-height: 100vh;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 375px) {
   .spr-logo,
-  .dtsp-skyline {
+  .dtsp-skyline,
+  .results {
     width: 375px;
   }
 }
@@ -92,7 +93,7 @@ body {
   flex-direction: column;
   min-height: 100vh;
 
-  .main {
+  .results {
     flex-grow: 1;
     display: grid;
   }
@@ -152,4 +153,38 @@ footer {
   text-align: center;
   margin: 1rem;
   padding: 8rem;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.projectResults {
+  border-style: solid;
+  border-radius: 1rem;
+  min-width: 40vh;
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+article {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 1px;
+  margin: 3px;
+}
+
+h3 {
+  margin: 1rem;
+}
+
+dt {
+  padding: 1rem;
 }
