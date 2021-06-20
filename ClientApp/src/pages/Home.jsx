@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import facebook from './images/facebook.svg'
 import instagram from './images/instagram.svg'
 import twitter from './images/twitter.svg'
@@ -9,97 +9,18 @@ import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
 
 export function Home() {
-  const [projects, setProjects] = useState([
-    {
-      id: 1,
-      name: 'Avanti',
-      status: 'Complete',
-      address: '201 4th St S',
-      class: 'Apartments',
-      floor: 9,
-      units: 366,
-      completion: '2018',
-      website: 'https://avantistpete.com/',
-    },
-    {
-      id: 2,
-      name: 'ONE St. Petersburg',
-      status: 'Complete',
-      address: '100 1st Ave N',
-      class: 'Condos',
-      floor: 41,
-      units: 253,
-      completion: '2018',
-      website: 'http://onestpetersburg.com/',
-    },
-    {
-      id: 3,
-      name: 'Tru by Hilton',
-      status: 'Complete',
-      address: '1650 Central Ave',
-      class: 'Hotel',
-      floor: 7,
-      units: 132,
-      completion: '2020',
-      website:
-        'https://www.hilton.com/en/hotels/piedtru-tru-st-petersburg-downtown-central-ave/',
-    },
-    {
-      id: 4,
-      name: 'Saint James Townhomes',
-      status: 'Complete',
-      address: '758 3rd Ave S',
-      class: 'Townhomes',
-      floor: 3,
-      units: 8,
-      completion: '2020',
-      website: 'https://saintjamessaintpete.com/',
-    },
-    {
-      id: 5,
-      name: '2800 Central Ave',
-      status: 'Proposed',
-      address: '2800 Central Ave',
-      class: 'Condos',
-      floor: 5,
-      units: 16,
-      completion: '2022',
-      website: 'https://www.2800central.com/',
-    },
-    {
-      id: 6,
-      name: 'Bezu',
-      status: 'Cancelled',
-      address: '100 4th Ave N',
-      class: 'Residential',
-      floor: 24,
-      units: 28,
-      completion: '2019',
-      website: 'N/A',
-    },
-    {
-      id: 7,
-      name: 'Ascent St Petersburg',
-      status: 'Under Construction',
-      address: '225 1st Ave N',
-      class: 'Apartments/Hotel',
-      floor: 36,
-      units: 526,
-      completion: '2023',
-      website: 'N/A',
-    },
-    {
-      id: 8,
-      name: 'Sapphire Condominiums',
-      status: 'Proposed',
-      address: '602 3rd Ave S',
-      class: 'Condos',
-      floor: 6,
-      units: 11,
-      completion: 'TBD',
-      website: 'N/A',
-    },
-  ])
+  const [projects, setProjects] = useState([])
+
+  useEffect(function () {
+    async function loadProjects() {
+      const response = await fetch('/api/projects')
+      if (response.status === 200) {
+        const json = await response.json()
+        setProjects(json)
+      }
+    }
+    loadProjects()
+  }, [])
 
   return (
     <>
