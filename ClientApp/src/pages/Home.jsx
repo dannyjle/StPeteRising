@@ -27,16 +27,7 @@ export function Home() {
       <div className="layout">
         <header>
           <div className="spr-img">
-            <div className="container">
-              <div className="dropdown">
-                <img src={list} alt="nav dropdown" width="35" height="35" />
-                <div className="dropdown-content">
-                  <a href="#">Home</a>
-                  <a href="#">Developments</a>
-                  <a href="#">Login</a>
-                </div>
-              </div>
-            </div>
+            <div className="container">{/* drop down menu */}</div>
           </div>
 
           <h1>
@@ -67,51 +58,43 @@ export function Home() {
             type="text"
             placeholder="&#x1F50D; Search"
           ></input>
-          <div className="dropdown">
-            <img src={filter} alt="filter content" width="35" height="35" />
-            <div className="dropdown-content">
-              <a href="#">Last Updated</a>
-              <a href="#">By Date Added</a>
-              <a href="#">A-Z</a>
-            </div>
-          </div>
         </form>
         <main className="results">
           {projects.map((project) => (
-            <dl className="projectResults">
+            <dl key={project.id} className="projectResults">
               <h3>{project.name}</h3>
               <dt className="status">
-                Status: <dd>{project.status}</dd>{' '}
+                <div className="subject">Status:</div>{' '}
               </dt>
+              <dd className="project-status">{project.status}</dd>{' '}
               <article>
                 <dt>
-                  Address: <dd>{project.address}</dd>
+                  <div className="subject">Class:</div>
                 </dt>
+                <dd>{project.class}</dd>
                 <dt>
-                  Class: <dd>{project.class}</dd>
+                  <div className="subject">Floor:</div>
                 </dt>
-                <dt>
-                  Floor: <dd>{project.floor}</dd>
-                </dt>
+                <dd>{project.floor}</dd>
               </article>
               <article>
                 <dt>
-                  Units: <dd>{project.units}</dd>
+                  <div className="subject">Units:</div>
                 </dt>
+                <dd>{project.units}</dd>
                 <dt>
-                  Completion: <dd>{project.completion}</dd>
+                  <div className="subject">Completion:</div>{' '}
                 </dt>
-                <dt>
-                  Website:
-                  <dd>
-                    <a className="webpage" href="{project.website}">
-                      Link
-                    </a>
-                  </dd>
+                <dd>{project.completion}</dd>
+                {/* <dt>
+                  <div className="subject">Website:</div>
                 </dt>
+                <dd>
+                  <a className="webpage" href="{project.website}">
+                    Link
+                  </a>
+                </dd> */}
               </article>
-
-              {/* <a href="https://www.w3schools.com">Visit W3Schools</a>  */}
             </dl>
           ))}
         </main>

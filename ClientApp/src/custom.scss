@@ -13,6 +13,11 @@ body {
 
 #root {
   min-height: 100vh;
+  background-image: linear-gradient(
+    rgb(255, 255, 255),
+    rgb(255, 255, 255),
+    rgba(218, 189, 58, 0.712)
+  );
 }
 
 @media screen and (max-width: 375px) {
@@ -23,41 +28,41 @@ body {
   }
 }
 
-/* Style The Dropdown Button */
-.dropbtn {
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+// /* Style The Dropdown Button */
+// .dropbtn {
+//   padding: 16px;
+//   font-size: 16px;
+//   border: none;
+//   cursor: pointer;
+// }
 
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
+// /* Dropdown Content (Hidden by Default) */
+// .dropdown-content {
+//   display: none;
+//   position: absolute;
+//   background-color: #f9f9f9;
+//   min-width: 160px;
+//   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+//   z-index: 1;
+// }
 
-/* Links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
+// /* Links inside the dropdown */
+// .dropdown-content a {
+//   color: black;
+//   padding: 12px 16px;
+//   text-decoration: none;
+//   display: block;
+// }
 
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: rgb(176, 150, 55);
-}
+// /* Change color of dropdown links on hover */
+// .dropdown-content a:hover {
+//   background-color: rgb(176, 150, 55);
+// }
 
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
+// /* Show the dropdown menu on hover */
+// .dropdown:hover .dropdown-content {
+//   display: block;
+// }
 
 /* Needed to position the navbar */
 .spr-img {
@@ -163,14 +168,22 @@ footer {
 
 .projectResults {
   border-style: solid;
-  border-radius: 1rem;
+  opacity: 70%;
+  border-radius: 5px;
   min-width: 40vh;
 }
 
 .status {
   display: flex;
   justify-content: center;
-  padding-bottom: 1rem;
+  padding: 1rem;
+}
+
+.project-status {
+  font-size: 25px;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 article {
@@ -183,8 +196,21 @@ article {
 
 h3 {
   margin: 1rem;
+  text-decoration: underline;
+  font-size: 2rem;
+}
+
+.subject {
+  text-decoration: underline;
+  font-style: italic;
 }
 
 dt {
   padding: 1rem;
+  font-weight: bold;
+}
+
+dd {
+  margin: 3px;
+  padding-top: 13px;
 }
