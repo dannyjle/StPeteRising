@@ -106,41 +106,52 @@ export function Home() {
             </dl>
           ))}
         </main>
-
         <footer>
           <div className="social-media">
-            <img
-              className="social-icon"
-              src={facebook}
-              alt="Facebook icon"
-              width="35"
-              height="35"
-            />
-            <img
-              className="social-icon"
-              src={instagram}
-              alt="Instagram icon"
-              width="35"
-              height="35"
-            />
-            <img
-              className="social-icon"
-              src={twitter}
-              alt="Twitter icon"
-              width="35"
-              height="35"
-            />
-            <img
-              className="social-icon"
-              src={linkedin}
-              alt="LinkedIn icon"
-              width="35"
-              height="35"
-            />
+            <a href="https://www.facebook.com/stpeterising/">
+              <img
+                className="social-icon"
+                src={facebook}
+                alt="Facebook icon"
+                width="35"
+                height="35"
+              />
+            </a>
+            <a href="https://www.instagram.com/stpeterising/">
+              <img
+                className="social-icon"
+                src={instagram}
+                alt="Instagram icon"
+                width="35"
+                height="35"
+              />
+            </a>
+            <a href="https://twitter.com/StPeteRising">
+              <img
+                className="social-icon"
+                src={twitter}
+                alt="Twitter icon"
+                width="35"
+                height="35"
+              />
+            </a>
+            <a href="https://www.linkedin.com/company/stpeterising">
+              <img
+                className="social-icon"
+                src={linkedin}
+                alt="LinkedIn icon"
+                width="35"
+                height="35"
+              />
+            </a>
           </div>
-          <p></p>
-          Terms of Use - Privacy Policy © 2021 St. Pete Rising, LLC
         </footer>
+        <div className="footer-link">
+          <a href="https://stpeterising.com/terms">Terms of Use</a>
+          <a href="https://stpeterising.com/privacy">
+            Privacy Policy © 2021 St. Pete Rising, LLC
+          </a>
+        </div>
       </div>
     </>
   )
