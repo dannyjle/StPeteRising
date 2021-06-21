@@ -28,6 +28,12 @@ body {
   }
 }
 
+@media screen and (min-width: 376px) {
+  .dtsp-skyline {
+    width: 1440px;
+  }
+}
+
 /* Add a black background color to the top navigation */
 .nav {
   position: relative;
@@ -114,6 +120,12 @@ form {
 .search-bar {
   border-radius: 3px;
   text-align: center;
+  height: 2rem;
+  width: 25.5rem;
+  border-color: black;
+  border-style: solid;
+  border-width: 3px;
+  font-weight: bold;
 }
 
 footer {
@@ -178,6 +190,7 @@ footer {
 
 .project-status {
   font-size: 25px;
+  font-weight: bolder;
   padding-bottom: 2rem;
   display: flex;
   justify-content: center;
@@ -196,12 +209,6 @@ h3 {
   text-decoration: underline;
   font-size: 2rem;
 }
-
-.subject {
-  text-decoration: underline;
-  font-style: italic;
-}
-
 dt {
   padding: 1rem;
   font-weight: bold;
@@ -210,4 +217,5 @@ dt {
 dd {
   margin: 3px;
   padding-top: 13px;
+  font-style: italic;
 }
