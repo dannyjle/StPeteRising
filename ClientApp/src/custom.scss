@@ -28,6 +28,36 @@ body {
   }
 }
 
+/* Add a black background color to the top navigation */
+.nav {
+  position: relative;
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.nav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.nav a:hover,
+.nav a:active {
+  background-color: white;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.nav a.active {
+  background-color: rgb(176, 150, 55);
+  color: white;
+}
+
 /* Container holding the image and the text */
 .text-container {
   position: relative;
@@ -46,124 +76,129 @@ body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-// .layout {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
-//   .results {
-//     flex-grow: 1;
-//     display: grid;
-//   }
-// }
+  .results {
+    flex-grow: 1;
+    display: grid;
+  }
+}
 
-// h1,
-// a,
-// .spr-logo {
-//   display: flex;
-//   justify-content: center;
-// }
+h1,
+a,
+.spr-logo {
+  display: flex;
+  justify-content: center;
+}
 
-// h2,
-// .dtsp-skyline {
-//   display: flex;
-//   justify-content: center;
-// }
+h2,
+.dtsp-skyline,
+nav {
+  display: flex;
+  justify-content: center;
+}
 
-// h1 {
-//   padding: 0.5rem;
-// }
+h1 {
+  padding: 0.5rem;
+}
 
-// form {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: row;
-// }
+.nav-link {
+  padding-left: 1rem;
+}
 
-// .search-bar {
-//   border-radius: 3px;
-//   text-align: center;
-// }
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 
-// footer {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-//   text-align: center;
-// }
+.search-bar {
+  border-radius: 3px;
+  text-align: center;
+}
 
-// .social-media {
-//   display: flex;
-//   justify-content: center;
-// }
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
 
-// .social-icon {
-//   margin-left: 1rem;
-// }
+.social-media {
+  display: flex;
+  justify-content: center;
+}
 
-// .social-icon:hover {
-//   opacity: 55%;
-// }
+.social-icon {
+  margin-left: 1rem;
+}
 
-// .login {
-//   justify-content: center;
-//   flex-direction: column;
-//   text-align: center;
-//   margin: 1rem;
-//   padding: 8rem;
-// }
+.social-icon:hover {
+  opacity: 55%;
+}
 
-// .results {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: column;
-// }
+.login {
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 1rem;
+  padding: 8rem;
+}
 
-// .projectResults {
-//   border-style: solid;
-//   opacity: 70%;
-//   border-radius: 5px;
-//   min-width: 40vh;
-// }
+.results {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-// .status {
-//   display: flex;
-//   justify-content: center;
-//   padding: 1rem;
-// }
+.projectResults {
+  border-style: solid;
+  opacity: 70%;
+  border-radius: 5px;
+  min-width: 40vh;
+}
 
-// .project-status {
-//   font-size: 25px;
-//   padding-bottom: 2rem;
-//   display: flex;
-//   justify-content: center;
-// }
+.status {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
 
-// article {
-//   display: flex;
-//   justify-content: center;
-//   flex-direction: row;
-//   padding: 1px;
-//   margin: 3px;
-// }
+.project-status {
+  font-size: 25px;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+}
 
-// h3 {
-//   margin: 1rem;
-//   text-decoration: underline;
-//   font-size: 2rem;
-// }
+article {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding: 1px;
+  margin: 3px;
+}
 
-// .subject {
-//   text-decoration: underline;
-//   font-style: italic;
-// }
+h3 {
+  margin: 1rem;
+  text-decoration: underline;
+  font-size: 2rem;
+}
 
-// dt {
-//   padding: 1rem;
-//   font-weight: bold;
-// }
+.subject {
+  text-decoration: underline;
+  font-style: italic;
+}
 
-// dd {
-//   margin: 3px;
-//   padding-top: 13px;
-// }
+dt {
+  padding: 1rem;
+  font-weight: bold;
+}
+
+dd {
+  margin: 3px;
+  padding-top: 13px;
+}

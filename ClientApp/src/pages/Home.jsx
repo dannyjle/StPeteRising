@@ -41,6 +41,14 @@ export function Home() {
               />
             </a>
           </h1>
+
+          <nav className="nav">
+            <a href="#">Home</a>
+            <a href="#">Projects</a>
+            <div className="nav-right">
+              <a href="#">Login</a>
+            </div>
+          </nav>
           <h2 className="text-container">
             <img
               className="dtsp-skyline"
