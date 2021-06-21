@@ -29,7 +29,6 @@ export function Home() {
           <div className="spr-img">
             <div className="container">{/* drop down menu */}</div>
           </div>
-
           <h1>
             <a to="#">
               <img
@@ -41,7 +40,6 @@ export function Home() {
               />
             </a>
           </h1>
-
           <nav className="nav">
             <a href="#">Home</a>
             <a href="#">Projects</a>
@@ -103,6 +101,9 @@ export function Home() {
                   </a>
                 </dd> */}
               </article>
+              <button>
+                <a href="#">More</a>
+              </button>
             </dl>
           ))}
         </main>

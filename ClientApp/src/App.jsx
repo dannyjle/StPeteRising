@@ -1,7 +1,7 @@
 import React from 'react'
 import './custom.scss'
-import { Admin } from './pages'
+import { Home } from './pages'
 
 export function App() {
-  return <Admin />
+  return <Home />
 }
