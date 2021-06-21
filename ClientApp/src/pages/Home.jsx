@@ -31,7 +31,7 @@ export function Home() {
           </div>
 
           <h1>
-            <a to="/">
+            <a to="#">
               <img
                 className="spr-logo"
                 src={spr}
