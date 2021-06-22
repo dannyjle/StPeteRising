@@ -72,9 +72,9 @@ export function AddNew() {
 
           <nav className="nav">
             <a href="/">Home</a>
-            <a href="/">Projects</a>
+            <a href="/add">Add Project</a>
             <div className="nav-right">
-              <a href="/">Login</a>
+              <a href="/admin">Login</a>
             </div>
           </nav>
           <h2 className="text-container">
@@ -85,11 +85,12 @@ export function AddNew() {
               width="495"
               height="200"
             />
-            <div className="text-centered">Add Project</div>
+            <div className="text-centered">New Project</div>
           </h2>
         </header>
-        <h4>New Project Form</h4>
+
         <form className="add-new" onSubmit={handleFormSubmit}>
+          <h4>New Project Form</h4>
           <p className="form-input">
             <label htmlFor="name">Name: </label>
             <input
@@ -162,10 +163,12 @@ export function AddNew() {
               onChange={handleStringFieldChange}
             />
           </p>
-          <p className="form-input">
-            <label htmlFor="picture">Picture: </label>
-            <input className="img-select" type="file" name="picture" />
-          </p>
+          <div className="picture">
+            <p className="form-input">
+              <label htmlFor="picture">Picture: </label>
+              <input className="img-select" type="file" name="picture" />
+            </p>
+          </div>
           <p>
             <input className="submit" type="submit" value="Submit" />
           </p>

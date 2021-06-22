@@ -48,9 +48,9 @@ export function Home() {
           </h1>
           <nav className="nav">
             <a href="/">Home</a>
-            <a href="/">Projects</a>
+            <a href="/add">Add Project</a>
             <div className="nav-right">
-              <a href="/">Login</a>
+              <a href="/admin">Login</a>
             </div>
           </nav>
           <h2 className="text-container">

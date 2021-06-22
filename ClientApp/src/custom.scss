@@ -155,6 +155,11 @@ h1 {
   padding: 0.5rem;
 }
 
+h4,
+h5 {
+  text-decoration: underline;
+}
+
 form {
   display: flex;
   justify-content: center;
@@ -208,7 +213,24 @@ footer {
   flex-direction: column;
   text-align: center;
   margin: 1rem;
-  padding: 8rem;
+  padding: 5rem;
+}
+
+.login .admin-buttons {
+  flex-direction: row;
+}
+
+.admin-buttons input,
+.login input,
+.add-new input {
+  padding: 0.5rem;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  opacity: 75%;
+  border: solid;
+  border-color: white;
+  border-width: 1px;
 }
 
 .results {
@@ -265,10 +287,11 @@ dd {
 }
 
 .add-new {
-  display: flew;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 1rem;
+  padding-left: 1rem;
   margin: 1rem;
   border-style: solid;
   border-width: 2px;
@@ -277,10 +300,16 @@ dd {
   border-radius: 4px;
 }
 
+.picture {
+  padding-left: 1.5rem;
+}
+
 .submit {
   padding: 0.5rem;
   background-color: black;
   border: none;
   color: white;
   font-weight: bold;
+  height: 39px;
+  width: 10rem;
 }
