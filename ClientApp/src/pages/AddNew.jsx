@@ -37,6 +37,19 @@ export function AddNew() {
     setNewProject(updatedProject)
   }
 
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+    const response = await fetch('/api/Projects', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(newProject),
+    })
+
+    if (response.ok) {
+      console.log('BAM!')
+    }
+  }
+
   return (
     <>
       <div className="layout">
@@ -76,7 +89,7 @@ export function AddNew() {
           </h2>
         </header>
         <h4>New Project Form</h4>
-        <form className="add-new" action="#">
+        <form className="add-new" onSubmit={handleFormSubmit}>
           <p className="form-input">
             <label htmlFor="name">Name: </label>
             <input
@@ -151,10 +164,10 @@ export function AddNew() {
           </p>
           <p className="form-input">
             <label htmlFor="picture">Picture: </label>
-            <input type="file" name="picture" />
+            <input className="img-select" type="file" name="picture" />
           </p>
           <p>
-            <input type="submit" value="Submit" />
+            <input className="submit" type="submit" value="Submit" />
           </p>
         </form>
 
