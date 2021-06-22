@@ -11,7 +11,7 @@ export function Admin() {
       <div className="layout">
         <header>
           <div className="spr-img">
-            <div className="container">{/* drop down menu */}</div>
+            <div className="container"></div>
           </div>
 
           <h1>
@@ -45,7 +45,7 @@ export function Admin() {
           </h2>
         </header>
         <form className="login">
-          <h4>Admin Login</h4>
+          <h5>Admin Login</h5>
           <input type="text" placeholder="Username"></input>
           <input type="text" placeholder="********"></input>
           <div className="login-buttons">

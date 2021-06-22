@@ -1,5 +1,5 @@
 :root {
-  font: 16px / 1 sans-serif;
+  font: 16px / 1 Verdana, Geneva, Tahoma, sans-serif;
 }
 
 html {
@@ -46,6 +46,10 @@ body {
   button a:active {
     color: white;
     text-decoration: underline;
+  }
+
+  .form-input {
+    padding-right: 5rem;
   }
 }
 
@@ -121,7 +125,7 @@ body {
   letter-spacing: 1px;
   text-shadow: 3px 3px black;
   font-style: italic;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 4rem;
 }
 
 .layout {
@@ -137,14 +141,11 @@ body {
 
 h1,
 a,
-.spr-logo {
-  display: flex;
-  justify-content: center;
-}
-
+.spr-logo,
 h2,
 .dtsp-skyline,
-nav {
+nav,
+h4 {
   display: flex;
   justify-content: center;
 }
@@ -162,7 +163,7 @@ form {
 .search-bar {
   text-align: center;
   height: 2rem;
-  width: 25.5rem;
+  width: 24rem;
   border-color: rgba(0, 0, 0, 0.616);
   border-width: 1px;
   font-weight: bold;
@@ -260,4 +261,17 @@ dd {
   margin: 3px;
   padding-top: 13px;
   font-style: italic;
+}
+
+.add-new {
+  display: flew;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 1rem;
+  margin: 1rem;
+  border-style: solid;
+  border-width: 2px;
+  opacity: 70%;
+  border-color: rgba(53, 53, 53, 0.274);
+  border-radius: 4px;
 }

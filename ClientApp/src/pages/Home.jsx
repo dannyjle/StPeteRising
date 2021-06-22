@@ -33,7 +33,7 @@ export function Home() {
       <div className="layout">
         <header>
           <div className="spr-img">
-            <div className="container">{/* drop down menu */}</div>
+            <div className="container"></div>
           </div>
           <h1>
             <a href="/">
@@ -61,7 +61,7 @@ export function Home() {
               width="495"
               height="200"
             />
-            <div className="text-centered">(Link Name)</div>
+            <div className="text-centered">Projects</div>
           </h2>
         </header>
         <form>

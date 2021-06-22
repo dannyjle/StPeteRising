@@ -11,7 +11,7 @@ export function AddNew() {
       <div className="layout">
         <header>
           <div className="spr-img">
-            <div className="container">{/* drop down menu */}</div>
+            <div className="container"></div>
           </div>
 
           <h1>
@@ -44,6 +44,48 @@ export function AddNew() {
             <div className="text-centered">(Link Name)</div>
           </h2>
         </header>
+        <h4>New Project Form</h4>
+        <form className="add-new" action="#">
+          <p className="form-input">
+            <label htmlFor="name">Name: </label>
+            <input type="text" name="name" />
+          </p>
+          <p className="form-input">
+            <label htmlFor="status">Status: </label>
+            <input type="text"></input>
+          </p>
+          <p className="form-input">
+            <label htmlFor="address">Address: </label>
+            <input type="text"></input>
+          </p>
+          <p className="form-input">
+            <label htmlFor="class">Class: </label>
+            <input type="text" name="class" />
+          </p>
+          <p className="form-input">
+            <label htmlFor="floor">Floor: </label>
+            <input type="text" name="floor" />
+          </p>
+          <p className="form-input">
+            <label htmlFor="units">Units: </label>
+            <input type="text" name="unit" />
+          </p>{' '}
+          <p className="form-input">
+            <label htmlFor="completion">Completion: </label>
+            <input type="text" name="completion" />
+          </p>
+          <p className="form-input">
+            <label htmlFor="website">Website: </label>
+            <input type="text" name="website" />
+          </p>
+          <p className="form-input">
+            <label htmlFor="picture">Picture: </label>
+            <input type="file" name="picture" />
+          </p>
+          <p>
+            <input type="submit" value="Submit" />
+          </p>
+        </form>
 
         <footer>
           <div className="social-media">

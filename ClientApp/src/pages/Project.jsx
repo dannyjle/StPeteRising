@@ -11,7 +11,7 @@ export function Project() {
       <div className="layout">
         <header>
           <div className="spr-img">
-            <div className="container">{/* drop down menu */}</div>
+            <div className="container"></div>
           </div>
 
           <h1>
