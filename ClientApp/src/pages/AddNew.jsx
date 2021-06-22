@@ -5,7 +5,7 @@ import linkedin from './images/linkedin.svg'
 import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
 
-export function Admin() {
+export function AddNew() {
   return (
     <>
       <div className="layout">
@@ -44,15 +44,7 @@ export function Admin() {
             <div className="text-centered">(Link Name)</div>
           </h2>
         </header>
-        <form className="login">
-          <h4>Admin Login</h4>
-          <input type="text" placeholder="Username"></input>
-          <input type="text" placeholder="********"></input>
-          <div className="login-buttons">
-            <input type="submit" value="Login"></input>
-            <input type="submit" value="Sign-up"></input>
-          </div>
-        </form>
+
         <footer>
           <div className="social-media">
             <a href="https://www.facebook.com/stpeterising/">

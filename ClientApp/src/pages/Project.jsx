@@ -2,7 +2,6 @@ import facebook from './images/facebook.svg'
 import instagram from './images/instagram.svg'
 import twitter from './images/twitter.svg'
 import linkedin from './images/linkedin.svg'
-import list from './images/list.svg'
 import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
 
@@ -16,7 +15,7 @@ export function Project() {
           </div>
 
           <h1>
-            <a href="#">
+            <a href="/">
               <img
                 className="spr-logo"
                 src={spr}
@@ -28,10 +27,10 @@ export function Project() {
           </h1>
 
           <nav className="nav">
-            <a href="#">Home</a>
-            <a href="#">Projects</a>
+            <a href="/">Home</a>
+            <a href="/">Projects</a>
             <div className="nav-right">
-              <a href="#">Login</a>
+              <a href="/">Login</a>
             </div>
           </nav>
           <h2 className="text-container">

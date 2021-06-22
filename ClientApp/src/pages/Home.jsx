@@ -3,8 +3,6 @@ import facebook from './images/facebook.svg'
 import instagram from './images/instagram.svg'
 import twitter from './images/twitter.svg'
 import linkedin from './images/linkedin.svg'
-import list from './images/list.svg'
-import filter from './images/filter.svg'
 import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
 
@@ -38,7 +36,7 @@ export function Home() {
             <div className="container">{/* drop down menu */}</div>
           </div>
           <h1>
-            <a href="#">
+            <a href="/">
               <img
                 className="spr-logo"
                 src={spr}
@@ -49,10 +47,10 @@ export function Home() {
             </a>
           </h1>
           <nav className="nav">
-            <a href="#">Home</a>
-            <a href="#">Projects</a>
+            <a href="/">Home</a>
+            <a href="/">Projects</a>
             <div className="nav-right">
-              <a href="#">Login</a>
+              <a href="/">Login</a>
             </div>
           </nav>
           <h2 className="text-container">
@@ -114,7 +112,7 @@ export function Home() {
                 </dd> */}
               </article>
               <button>
-                <a href="#">More</a>
+                <a href="/">More</a>
               </button>
             </dl>
           ))}
