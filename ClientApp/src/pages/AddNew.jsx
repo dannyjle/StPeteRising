@@ -4,8 +4,39 @@ import twitter from './images/twitter.svg'
 import linkedin from './images/linkedin.svg'
 import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
+import { useState } from 'react'
 
 export function AddNew() {
+  const [newProject, setNewProject] = useState({
+    name: '',
+    status: '',
+    address: '',
+    class: '',
+    floor: '',
+    units: '',
+    completion: '',
+    website: '',
+  })
+
+  function handleStringFieldChange(event) {
+    const value = event.target.value
+    const fieldName = event.target.name
+
+    const updatedProject = { ...newProject, [fieldName]: value }
+
+    setNewProject(updatedProject)
+  }
+
+  function handleIntegerFieldChange(event) {
+    const value = parseInt(event.target.value) || 0
+
+    const fieldName = event.target.name
+
+    const updatedProject = { ...newProject, [fieldName]: value }
+
+    setNewProject(updatedProject)
+  }
+
   return (
     <>
       <div className="layout">
@@ -41,42 +72,82 @@ export function AddNew() {
               width="495"
               height="200"
             />
-            <div className="text-centered">(Link Name)</div>
+            <div className="text-centered">Add Project</div>
           </h2>
         </header>
         <h4>New Project Form</h4>
         <form className="add-new" action="#">
           <p className="form-input">
             <label htmlFor="name">Name: </label>
-            <input type="text" name="name" />
+            <input
+              type="text"
+              name="name"
+              value={newProject.name}
+              onChange={handleStringFieldChange}
+            />
           </p>
           <p className="form-input">
             <label htmlFor="status">Status: </label>
-            <input type="text"></input>
+            <input
+              type="text"
+              name="status"
+              value={newProject.status}
+              onChange={handleStringFieldChange}
+            ></input>
           </p>
           <p className="form-input">
             <label htmlFor="address">Address: </label>
-            <input type="text"></input>
+            <input
+              type="text"
+              name="address"
+              value={newProject.address}
+              onChange={handleStringFieldChange}
+            ></input>
           </p>
           <p className="form-input">
             <label htmlFor="class">Class: </label>
-            <input type="text" name="class" />
+            <input
+              type="text"
+              name="class"
+              value={newProject.class}
+              onChange={handleStringFieldChange}
+            />
           </p>
           <p className="form-input">
             <label htmlFor="floor">Floor: </label>
-            <input type="text" name="floor" />
+            <input
+              type="text"
+              name="floor"
+              value={newProject.floor}
+              onChange={handleIntegerFieldChange}
+            />
           </p>
           <p className="form-input">
             <label htmlFor="units">Units: </label>
-            <input type="text" name="unit" />
+            <input
+              type="text"
+              name="units"
+              value={newProject.units}
+              onChange={handleIntegerFieldChange}
+            />
           </p>{' '}
           <p className="form-input">
             <label htmlFor="completion">Completion: </label>
-            <input type="text" name="completion" />
+            <input
+              type="text"
+              name="completion"
+              value={newProject.completion}
+              onChange={handleStringFieldChange}
+            />
           </p>
           <p className="form-input">
             <label htmlFor="website">Website: </label>
-            <input type="text" name="website" />
+            <input
+              type="text"
+              name="website"
+              value={newProject.website}
+              onChange={handleStringFieldChange}
+            />
           </p>
           <p className="form-input">
             <label htmlFor="picture">Picture: </label>
