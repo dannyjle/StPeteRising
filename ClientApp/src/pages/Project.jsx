@@ -16,7 +16,7 @@ export function Project() {
           </div>
 
           <h1>
-            <a to="#">
+            <a href="#">
               <img
                 className="spr-logo"
                 src={spr}

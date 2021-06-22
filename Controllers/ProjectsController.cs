@@ -41,8 +41,11 @@ namespace StPeteRising.Controllers
                 return await _context.Projects.OrderBy(row => row.Id).ToListAsync();
             }
             else
-            {
-                return await _context.Projects.Where(project => project.Name.ToLower().Contains(filter.ToLower())).ToListAsync();
+            {  // add's filter function
+                return await _context.Projects.Where(project => project.Name.ToLower().Contains(filter.ToLower())
+                || project.Status.ToLower().Contains(filter.ToLower())
+                || project.Class.ToLower().Contains(filter.ToLower())
+                || project.Completion.ToLower().Contains(filter.ToLower())).ToListAsync();
             }
         }
 

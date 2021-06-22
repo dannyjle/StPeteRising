@@ -10,17 +10,25 @@ import dtspSky from './images/dtspskyline.jpeg'
 
 export function Home() {
   const [projects, setProjects] = useState([])
+  const [filterText, setFilterText] = useState('')
 
-  useEffect(function () {
-    async function loadProjects() {
-      const response = await fetch('/api/projects')
-      if (response.status === 200) {
-        const json = await response.json()
-        setProjects(json)
+  useEffect(
+    function () {
+      async function loadProjects() {
+        const url =
+          filterText.length === 0
+            ? '/api/projects'
+            : `/api/projects?filter=${filterText}`
+        const response = await fetch(url)
+        if (response.status === 200) {
+          const json = await response.json()
+          setProjects(json)
+        }
       }
-    }
-    loadProjects()
-  }, [])
+      loadProjects()
+    },
+    [filterText]
+  )
 
   return (
     <>
@@ -30,7 +38,7 @@ export function Home() {
             <div className="container">{/* drop down menu */}</div>
           </div>
           <h1>
-            <a to="#">
+            <a href="#">
               <img
                 className="spr-logo"
                 src={spr}
@@ -62,7 +70,11 @@ export function Home() {
           <input
             className="search-bar"
             type="text"
-            placeholder="&#x1F50D; Search"
+            placeholder="&#x1F50D; Search..."
+            value={filterText}
+            onChange={function (event) {
+              setFilterText(event.target.value)
+            }}
           ></input>
         </form>
         <main className="results">
