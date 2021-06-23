@@ -37,7 +37,7 @@ export function Home() {
       </form>
       <main className="results">
         {projects.map((project) => (
-          <dl key={project.id} className="projectResults">
+          <dl key={project.id} className="project-results">
             <h3>{project.name}</h3>
             <dt className="status">
               <div className="subject">Status:</div>{' '}

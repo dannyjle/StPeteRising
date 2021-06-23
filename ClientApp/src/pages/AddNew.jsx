@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 export function AddNew() {
   const [newProject, setNewProject] = useState({
@@ -11,6 +12,8 @@ export function AddNew() {
     completion: '',
     website: '',
   })
+
+  const history = useHistory()
 
   function handleStringFieldChange(event) {
     const value = event.target.value
@@ -40,7 +43,7 @@ export function AddNew() {
     })
 
     if (response.ok) {
-      console.log('BAM!')
+      history.push('/')
     }
   }
 
@@ -50,6 +53,7 @@ export function AddNew() {
         <p className="form-input">
           <label htmlFor="name">Name: </label>
           <input
+            required
             type="text"
             name="name"
             value={newProject.name}
