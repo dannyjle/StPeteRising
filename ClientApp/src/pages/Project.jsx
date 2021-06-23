@@ -14,6 +14,7 @@ export function Project() {
   })
 
   const params = useParams()
+  // @ts-ignore
   const id = params.id
 
   useEffect(() => {
