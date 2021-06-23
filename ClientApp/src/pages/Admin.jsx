@@ -29,9 +29,7 @@ export function Admin() {
           <nav className="nav">
             <a href="/">Home</a>
             <a href="/add">Add Project</a>
-            <div className="nav-right">
-              <a href="/admin">Login</a>
-            </div>
+            <a href="/admin">Login</a>
           </nav>
           <h2 className="text-container">
             <img
@@ -46,8 +44,16 @@ export function Admin() {
         </header>
         <form className="login">
           <h5>Admin Login</h5>
-          <input type="text" placeholder="Username"></input>
-          <input type="text" placeholder="********"></input>
+          <input
+            className="input-text"
+            type="text"
+            placeholder="Username"
+          ></input>
+          <input
+            className="input-text"
+            type="text"
+            placeholder="********"
+          ></input>
           <div className="admin-buttons">
             <input type="submit" value="Login"></input>
             <input type="submit" value="New Account"></input>

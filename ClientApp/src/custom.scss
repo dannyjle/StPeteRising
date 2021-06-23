@@ -27,23 +27,24 @@ body {
     width: 375px;
   }
 
-  button {
+  .more-button {
     padding: 0.5rem;
     margin: 1rem;
-    margin-left: 18rem;
+    margin-left: 9.5rem;
     background-color: black;
     border: none;
+    width: 5rem;
   }
 
-  button a {
+  .more-button a {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
   }
 
-  button a:hover,
-  button a:active {
+  .more-button a:hover,
+  .more-button a:active {
     color: white;
     text-decoration: underline;
   }
@@ -58,23 +59,24 @@ body {
     width: 1600px;
   }
 
-  button {
+  .more-button {
     padding: 0.5rem;
     margin: 1rem;
-    margin-left: 20rem;
+    margin-left: 13rem;
     background-color: black;
     border: none;
+    width: 5rem;
   }
 
-  button a {
+  .more-button a {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
     font-size: 17px;
   }
 
-  button a:hover,
-  button a:active {
+  .more-button a:hover,
+  .more-button a:active {
     color: white;
     text-decoration: underline;
   }
@@ -145,8 +147,7 @@ a,
 .spr-logo,
 h2,
 .dtsp-skyline,
-nav,
-h4 {
+nav {
   display: flex;
   justify-content: center;
 }
@@ -155,7 +156,6 @@ h1 {
   padding: 0.5rem;
 }
 
-h4,
 h5 {
   text-decoration: underline;
 }
@@ -233,6 +233,11 @@ footer {
   border-width: 1px;
 }
 
+.login .input-text {
+  max-width: 20rem;
+  align-self: center;
+}
+
 .results {
   display: flex;
   justify-content: center;
@@ -298,6 +303,10 @@ dd {
   opacity: 70%;
   border-color: rgba(53, 53, 53, 0.274);
   border-radius: 4px;
+}
+
+.add-new label {
+  padding-left: 10px;
 }
 
 .picture {

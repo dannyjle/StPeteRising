@@ -12,7 +12,7 @@ export function App() {
       <Route exact path="/">
         <Home />
       </Route>
-      <Route exact path="/project">
+      <Route exact path="/project/:id">
         <Project />
       </Route>
       <Route exact path="/admin">

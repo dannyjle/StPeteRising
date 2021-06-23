@@ -49,9 +49,7 @@ export function Home() {
           <nav className="nav">
             <a href="/">Home</a>
             <a href="/add">Add Project</a>
-            <div className="nav-right">
-              <a href="/admin">Login</a>
-            </div>
+            <a href="/admin">Login</a>
           </nav>
           <h2 className="text-container">
             <img
@@ -111,8 +109,8 @@ export function Home() {
                   </a>
                 </dd> */}
               </article>
-              <button>
-                <a href="/">More</a>
+              <button className="more-button">
+                <a href={`/project/${project.id}`}>More</a>
               </button>
             </dl>
           ))}

@@ -73,9 +73,7 @@ export function AddNew() {
           <nav className="nav">
             <a href="/">Home</a>
             <a href="/add">Add Project</a>
-            <div className="nav-right">
-              <a href="/admin">Login</a>
-            </div>
+            <a href="/admin">Login</a>
           </nav>
           <h2 className="text-container">
             <img
@@ -90,7 +88,6 @@ export function AddNew() {
         </header>
 
         <form className="add-new" onSubmit={handleFormSubmit}>
-          <h4>New Project Form</h4>
           <p className="form-input">
             <label htmlFor="name">Name: </label>
             <input
