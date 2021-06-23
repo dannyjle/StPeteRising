@@ -1,4 +1,4 @@
-export function Admin() {
+export function Login() {
   return (
     <>
       <form className="login">
@@ -6,7 +6,7 @@ export function Admin() {
         <input
           className="input-text"
           type="text"
-          placeholder="Username"
+          placeholder="Email Address"
         ></input>
         <input
           className="input-text"
@@ -15,9 +15,11 @@ export function Admin() {
         ></input>
         <div className="admin-buttons">
           <input type="submit" value="Login"></input>
-          <input type="submit" value="New Account"></input>
         </div>
       </form>
+      <button className="signup-button">
+        <a href={`/signup`}>Sign-up</a>
+      </button>
     </>
   )
 }

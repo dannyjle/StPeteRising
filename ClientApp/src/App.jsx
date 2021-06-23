@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './custom.scss'
-import { Home, Project, AddNew, Admin, Layout } from './pages'
+import { Home, Project, AddNew, Login, Layout, SignUp } from './pages'
 
 export function App() {
   return (
@@ -13,8 +13,11 @@ export function App() {
         <Route exact path="/project/:id">
           <Project />
         </Route>
-        <Route exact path="/admin">
-          <Admin />
+        <Route exact path="/login">
+          <Login />
+        </Route>
+        <Route exact path="/signup">
+          <SignUp />
         </Route>
         <Route exact path="/add">
           <AddNew />

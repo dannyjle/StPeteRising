@@ -1,5 +1,6 @@
 export { Home } from './Home'
-export { Admin } from './Admin'
+export { Login } from './Login'
+export { SignUp } from './SignUp'
 export { Project } from './Project'
 export { AddNew } from './AddNew'
 export { Layout } from './Layout'

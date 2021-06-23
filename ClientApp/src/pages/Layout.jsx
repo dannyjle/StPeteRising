@@ -27,7 +27,7 @@ export function Layout({ children }) {
           <nav className="nav">
             <a href="/">Home</a>
             <a href="/add">Add Project</a>
-            <a href="/admin">Login</a>
+            <a href="/login">Login</a>
           </nav>
           <h2 className="text-container">
             <img

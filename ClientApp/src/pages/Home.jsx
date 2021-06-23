@@ -40,9 +40,9 @@ export function Home() {
           <dl key={project.id} className="project-results">
             <h3>{project.name}</h3>
             <dt className="status">
-              <div className="subject">Status:</div>{' '}
+              <div className="subject">Status:</div>
             </dt>
-            <dd className="project-status">{project.status}</dd>{' '}
+            <dd className="project-status">{project.status}</dd>
             <article>
               <dt>
                 <div className="subject">Class:</div>
@@ -59,17 +59,9 @@ export function Home() {
               </dt>
               <dd>{project.units}</dd>
               <dt>
-                <div className="subject">Completion:</div>{' '}
+                <div className="subject">Completion:</div>
               </dt>
               <dd>{project.completion}</dd>
-              {/* <dt>
-                  <div className="subject">Website:</div>
-                </dt>
-                <dd>
-                  <a className="webpage" href="{project.website}">
-                    Link
-                  </a>
-                </dd> */}
             </article>
             <button className="more-button">
               <a href={`/project/${project.id}`}>More</a>

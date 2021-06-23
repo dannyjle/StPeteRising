@@ -27,7 +27,8 @@ body {
     width: 375px;
   }
 
-  .more-button {
+  .more-button,
+  .signup-button {
     padding: 0.5rem;
     margin: 1rem;
     margin-left: 9.5rem;
@@ -36,7 +37,8 @@ body {
     width: 5rem;
   }
 
-  .more-button a {
+  .more-button a,
+  .signup-button a {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
@@ -44,7 +46,9 @@ body {
   }
 
   .more-button a:hover,
-  .more-button a:active {
+  .more-button a:active,
+  .signup-button a:hover,
+  .signup-button a:active {
     color: white;
     text-decoration: underline;
   }
@@ -59,7 +63,8 @@ body {
     width: 1600px;
   }
 
-  .more-button {
+  .more-button,
+  .signup-button {
     padding: 0.5rem;
     margin: 1rem;
     margin-left: 13rem;
@@ -68,7 +73,8 @@ body {
     width: 5rem;
   }
 
-  .more-button a {
+  .more-button a,
+  .signup-button a {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
@@ -76,7 +82,9 @@ body {
   }
 
   .more-button a:hover,
-  .more-button a:active {
+  .more-button a:active,
+  .signup-button a:hover,
+  .signup-button a:active {
     color: white;
     text-decoration: underline;
   }
@@ -104,12 +112,6 @@ body {
 .nav a:active {
   background-color: white;
   color: black;
-}
-
-/* Add a color to the active/current link */
-.nav a.active {
-  background-color: rgb(176, 150, 55);
-  color: white;
 }
 
 /* Container holding the image and the text */
@@ -166,6 +168,17 @@ form {
   flex-direction: row;
 }
 
+.signup-button {
+  opacity: 75%;
+  margin-bottom: 2rem;
+  border-color: white;
+  border-style: solid;
+  border-width: 1px;
+  width: 5rem;
+  padding: 3px;
+  font-weight: lighter;
+}
+
 .search-bar {
   text-align: center;
   height: 2rem;
@@ -208,7 +221,8 @@ footer {
   opacity: 55%;
 }
 
-.login {
+.login,
+.signup {
   justify-content: center;
   flex-direction: column;
   text-align: center;
@@ -216,13 +230,15 @@ footer {
   padding: 5rem;
 }
 
-.login .admin-buttons {
+.login .admin-buttons,
+.signup .admin-buttons {
   flex-direction: row;
 }
 
 .admin-buttons input,
 .login input,
-.add-new input {
+.add-new input,
+.signup input {
   padding: 0.5rem;
   background-color: black;
   color: white;
@@ -231,9 +247,11 @@ footer {
   border: solid;
   border-color: white;
   border-width: 1px;
+  font-weight: lighter;
 }
 
-.login .input-text {
+.login .input-text,
+.signup .input-text {
   max-width: 20rem;
   align-self: center;
 }
