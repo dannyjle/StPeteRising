@@ -113,23 +113,23 @@ body {
 }
 
 /* Container holding the image and the text */
-.text-container {
-  position: relative;
-  color: white;
-}
+// .text-container {
+//   position: relative;
+//   color: white;
+// }
 
 /* Center text over image */
-.text-centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  letter-spacing: 1px;
-  text-shadow: 3px 3px black;
-  font-style: italic;
-  font-size: 4rem;
-  text-align: center;
-}
+// .text-centered {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   transform: translate(-50%, -50%);
+//   letter-spacing: 1px;
+//   text-shadow: 3px 3px black;
+//   font-style: italic;
+//   font-size: 4rem;
+//   text-align: center;
+// }
 
 .layout {
   display: flex;
