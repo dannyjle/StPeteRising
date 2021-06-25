@@ -32,6 +32,7 @@ export function SignUp() {
     const apiResponse = await response.json()
 
     if (apiResponse.status === 400) {
+      // @ts-ignore
       setErrorMessage(Object.values(apiResponse.errors).join(' '))
     } else {
       history.push('/login')
