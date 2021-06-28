@@ -22,5 +22,7 @@ namespace StPeteRising.Models
         public string Completion { get; set; }
 
         public string Website { get; set; }
+
+        public int UserId { get; set; }
     }
 }

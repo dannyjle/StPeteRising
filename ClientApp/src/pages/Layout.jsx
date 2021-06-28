@@ -4,8 +4,18 @@ import twitter from './images/twitter.svg'
 import linkedin from './images/linkedin.svg'
 import spr from './images/sprlogo.png'
 import dtspSky from './images/dtspskyline.jpeg'
+import { Link } from 'react-router-dom'
+import { getUser, isLoggedIn, logout } from '../auth'
 
 export function Layout({ children }) {
+  const user = getUser()
+
+  function handleLogout() {
+    logout()
+
+    window.location.assign('/')
+  }
+
   return (
     <>
       <div className="layout">
@@ -25,10 +35,15 @@ export function Layout({ children }) {
             </a>
           </h1>
           <nav className="nav">
-            <a href="/">Home</a>
-            <a href="/add">Add Project</a>
-            <a href="/signup">Sign Up</a>
-            <a href="/login">Login</a>
+            <Link to="/">Home</Link>
+            {isLoggedIn() ? <Link to="/add">Add Project</Link> : null}
+            {isLoggedIn() ? null : <Link to="/signup">Sign Up</Link>}
+            {isLoggedIn() ? null : <Link to="/login">Login</Link>}
+            {isLoggedIn() ? (
+              <span className="logout" onClick={handleLogout}>
+                Logout
+              </span>
+            ) : null}
           </nav>
           <h2 className="text-container">
             <img
@@ -38,7 +53,9 @@ export function Layout({ children }) {
               width="495"
               height="200"
             />
-            <div className="text-centered"></div>
+            {isLoggedIn() ? (
+              <div className="text-centered">Hello, {user.fullName}</div>
+            ) : null}
           </h2>
         </header>
         <main className="main">{children}</main>
