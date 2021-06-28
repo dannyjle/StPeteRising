@@ -1,25 +1,62 @@
+import { useState } from 'react'
+
 export function Login() {
+  const [errorMessage, setErrorMessage] = useState()
+  const [user, setUser] = useState({
+    email: '',
+    password: '',
+  })
+
+  function handleStringFieldChange(event) {
+    const value = event.target.value
+    const fieldName = event.target.name
+    const updatedUser = { ...user, [fieldName]: value }
+    setUser(updatedUser)
+  }
+
+  async function handleFormSubmit(event) {
+    event.preventDefault()
+    const response = await fetch('/api/Sessions', {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify(user),
+    })
+    const apiResponse = await response.json()
+    if (apiResponse.status === 400) {
+      // @ts-ignore
+      setErrorMessage(Object.values(apiResponse.errors).join(' '))
+    } else {
+      // TODO, record the login
+      // recordAuthentication(apiResponse)
+      window.location.assign('/')
+    }
+  }
+
   return (
     <>
-      <form className="login">
+      <form className="login" onSubmit={handleFormSubmit}>
         <h5>Admin Login</h5>
+        {errorMessage ? <p>{errorMessage}</p> : null}
+        <label>Email:</label>
         <input
           className="input-text"
-          type="text"
-          placeholder="Email Address"
+          type="email"
+          name="email"
+          value={user.email}
+          onChange={handleStringFieldChange}
         ></input>
+        <label>Password:</label>
         <input
           className="input-text"
-          type="text"
-          placeholder="********"
+          type="password"
+          name="password"
+          value={user.password}
+          onChange={handleStringFieldChange}
         ></input>
         <div className="admin-buttons">
           <input type="submit" value="Login"></input>
         </div>
       </form>
-      <button className="signup-button">
-        <a href={`/signup`}>Sign-up</a>
-      </button>
     </>
   )
 }

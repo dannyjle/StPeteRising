@@ -27,8 +27,7 @@ body {
     width: 375px;
   }
 
-  .more-button,
-  .signup-button {
+  .more-button {
     padding: 0.5rem;
     margin: 1rem;
     margin-left: 9.5rem;
@@ -38,8 +37,7 @@ body {
     font-weight: lighter;
   }
 
-  .more-button a,
-  .signup-button a {
+  .more-button a {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
@@ -47,9 +45,7 @@ body {
   }
 
   .more-button a:hover,
-  .more-button a:active,
-  .signup-button a:hover,
-  .signup-button a:active {
+  .more-button a:active {
     color: white;
     text-decoration: underline;
   }
@@ -64,8 +60,7 @@ body {
     width: 1600px;
   }
 
-  .more-button,
-  .signup-button {
+  .more-button {
     padding: 0.5rem;
     margin: 1rem;
     margin-left: 13rem;
@@ -74,8 +69,7 @@ body {
     width: 5rem;
   }
 
-  .more-button a,
-  .signup-button a {
+  .more-button a {
     color: #f2f2f2;
     text-align: center;
     text-decoration: none;
@@ -83,9 +77,7 @@ body {
   }
 
   .more-button a:hover,
-  .more-button a:active,
-  .signup-button a:hover,
-  .signup-button a:active {
+  .more-button a:active {
     color: white;
     text-decoration: underline;
   }
@@ -167,16 +159,6 @@ form {
   display: flex;
   justify-content: center;
   flex-direction: row;
-}
-
-.signup-button {
-  opacity: 75%;
-  margin-bottom: 2rem;
-  border-color: white;
-  border-style: solid;
-  border-width: 1px;
-  width: 5rem;
-  padding: 3px;
 }
 
 .search-bar {
