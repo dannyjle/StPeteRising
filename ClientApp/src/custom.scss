@@ -168,7 +168,7 @@ h5 {
 h4,
 .submit-error {
   font-style: italic;
-  opacity: 75%;
+  opacity: 0.7;
   font-size: 2rem;
 }
 
@@ -217,7 +217,7 @@ footer {
 
 .social-icon:hover,
 .social-icon:active {
-  opacity: 55%;
+  opacity: 10%;
 }
 
 .login,
@@ -237,7 +237,7 @@ footer {
   background-color: black;
   color: white;
   font-weight: bold;
-  opacity: 75%;
+  opacity: 0.7;
   border: solid;
   border-color: white;
   border-width: 1px;
@@ -259,7 +259,7 @@ footer {
 .project-results {
   border-style: solid;
   border-width: 2px;
-  opacity: 70%;
+  opacity: 0.7;
   min-width: 40vh;
   border-color: rgba(53, 53, 53, 0.274);
   border-radius: 4px;
@@ -313,7 +313,7 @@ dd {
   margin: 1rem;
   border-style: solid;
   border-width: 2px;
-  opacity: 70%;
+  opacity: 0.7;
   border-color: rgba(53, 53, 53, 0.274);
   border-radius: 4px;
 }
