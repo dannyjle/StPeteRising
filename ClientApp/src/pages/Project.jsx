@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
 
 export function Project() {
   const [project, setProject] = useState({
@@ -11,6 +12,14 @@ export function Project() {
     units: 0,
     completion: '',
     website: '',
+    latitude: 0,
+    longitude: 0,
+  })
+
+  const [viewport, setViewport] = useState({
+    latitude: 27.77101804911986,
+    longitude: -82.66090611749074,
+    zoom: 9.8,
   })
 
   const params = useParams()
@@ -37,7 +46,7 @@ export function Project() {
             <div className="subject">Status:</div>{' '}
           </dt>
           <dd className="project-status">{project.status}</dd>{' '}
-          <article>
+          <section>
             <dt>
               <div className="subject">Class:</div>
             </dt>
@@ -46,8 +55,8 @@ export function Project() {
               <div className="subject">Floor:</div>
             </dt>
             <dd>{project.floor}</dd>
-          </article>
-          <article>
+          </section>
+          <section>
             <dt>
               <div className="subject">Units:</div>
             </dt>
@@ -56,28 +65,45 @@ export function Project() {
               <div className="subject">Completion:</div>{' '}
             </dt>
             <dd>{project.completion}</dd>
-          </article>
-          <article>
+          </section>
+          <section>
             <dt>
               <div className="subject">Website:</div>
             </dt>
-            <dd>
-              <a className="webpage" href="{project.website}">
-                Link
-              </a>
-            </dd>
-          </article>
-          <article>
+            <dd>{project.website}</dd>
+          </section>
+          <section>
             <dt>
               <div className="subject">Location:</div>
             </dt>
             <dd>{project.address}</dd>
-          </article>
-          <article>MAP GOES HERE</article>
-          <article>
-            <p>--------</p>
-          </article>
-          <article>IMAGES GO HERE</article>
+          </section>
+          <div className="map">
+            <ReactMapGL
+              {...viewport}
+              onViewportChange={setViewport}
+              style={{ position: 'absolute' }}
+              width="70%"
+              height="35%"
+              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+            >
+              <div style={{ position: 'absolute', left: 10 }}>
+                <NavigationControl />
+              </div>
+              {/* {project.map((development) => (
+                <Marker
+                  key={development.id}
+                  latitude={development.latitude}
+                  longitude={development.longitude}
+                >
+                  <span role="img" aria-label="sun">
+                    ☀️
+                  </span>
+                </Marker>
+              ))} */}
+            </ReactMapGL>
+          </div>
+          <div className="image-uploads">IMAGES GO HERE</div>
         </dl>
       </main>
     </>

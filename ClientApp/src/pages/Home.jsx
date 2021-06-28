@@ -44,7 +44,7 @@ export function Home() {
               <div className="subject">Status:</div>
             </dt>
             <dd className="project-status">{project.status}</dd>
-            <article>
+            <section>
               <dt>
                 <div className="subject">Class:</div>
               </dt>
@@ -53,8 +53,8 @@ export function Home() {
                 <div className="subject">Floor:</div>
               </dt>
               <dd>{project.floor}</dd>
-            </article>
-            <article>
+            </section>
+            <section>
               <dt>
                 <div className="subject">Units:</div>
               </dt>
@@ -63,7 +63,7 @@ export function Home() {
                 <div className="subject">Completion:</div>
               </dt>
               <dd>{project.completion}</dd>
-            </article>
+            </section>
             <button className="more-button">
               <a href={`/project/${project.id}`}>More</a>
             </button>

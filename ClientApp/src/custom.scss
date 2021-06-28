@@ -53,6 +53,15 @@ body {
   .form-input {
     padding-right: 5rem;
   }
+
+  .map {
+    padding-top: 1rem;
+    padding-bottom: 10rem;
+  }
+
+  .image-uploads {
+    padding-top: 10rem;
+  }
 }
 
 @media screen and (min-width: 376px) {
@@ -80,6 +89,19 @@ body {
   .more-button a:active {
     color: white;
     text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 875px) {
+  .map {
+    padding-left: 35rem;
+    padding-right: 35rem;
+    padding-top: 1rem;
+    padding-bottom: 15rem;
+  }
+
+  .image-uploads {
+    padding-top: 15rem;
   }
 }
 
@@ -152,7 +174,9 @@ h2,
 .dtsp-skyline,
 nav,
 h4,
-.submit-error {
+.submit-error,
+.map,
+.image-uploads {
   display: flex;
   justify-content: center;
 }
@@ -279,10 +303,11 @@ footer {
   justify-content: center;
 }
 
-article {
+section {
   display: flex;
   justify-content: center;
   flex-direction: row;
+  flex-wrap: wrap;
   padding: 1px;
   margin: 3px;
 }
