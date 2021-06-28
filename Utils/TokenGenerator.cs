@@ -32,7 +32,7 @@ namespace StPeteRising.Utils
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = DateTime.UtcNow.AddHours(10),
+                Expires = DateTime.UtcNow.AddDays(7),
                 SigningCredentials = SigningCredentials()
             };
 
