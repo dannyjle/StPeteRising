@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { recordAuthentication } from '../auth'
 
 export function Login() {
   const [errorMessage, setErrorMessage] = useState()
@@ -27,7 +28,7 @@ export function Login() {
       setErrorMessage(Object.values(apiResponse.errors).join(' '))
     } else {
       // TODO, record the login
-      // recordAuthentication(apiResponse)
+      recordAuthentication(apiResponse)
       window.location.assign('/')
     }
   }
