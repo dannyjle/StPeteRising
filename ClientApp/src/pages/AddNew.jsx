@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import { authHeader } from '../auth'
 
 export function AddNew() {
   const [newProject, setNewProject] = useState({
@@ -13,6 +14,7 @@ export function AddNew() {
     website: '',
   })
 
+  const [errorMessage, setErrorMessage] = useState()
   const history = useHistory()
 
   function handleStringFieldChange(event) {
@@ -38,17 +40,24 @@ export function AddNew() {
     event.preventDefault()
     const response = await fetch('/api/Projects', {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      // send JSON ~and~ (token)
+      headers: { 'content-type': 'application/json', ...authHeader() },
       body: JSON.stringify(newProject),
     })
 
-    if (response.ok) {
-      history.push('/')
+    if (response.status === 401) {
+      // @ts-ignore
+      setErrorMessage('Not Authorized')
+    } else {
+      if (response.ok) {
+        history.push('/')
+      }
     }
   }
 
   return (
     <>
+      {errorMessage ? <p className="submit-error">{errorMessage}</p> : null}
       <form className="add-new" onSubmit={handleFormSubmit}>
         <p className="form-input">
           <label htmlFor="name">Name: </label>

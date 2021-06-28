@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -133,8 +135,14 @@ namespace StPeteRising.Controllers
         // new values for the record.
         //
         [HttpPost]
+        // Requires authorization of authorized user for Post function
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<Project>> PostProject(Project project)
         {
+
+            // Set the UserID to the current user id, this overrides anything the user specifies.
+            project.UserId = GetCurrentUserId();
+
             // Indicate to the database context we want to add this new record
             _context.Projects.Add(project);
             await _context.SaveChangesAsync();
@@ -175,6 +183,13 @@ namespace StPeteRising.Controllers
         private bool ProjectExists(int id)
         {
             return _context.Projects.Any(project => project.Id == id);
+        }
+
+        // Private helper method to get the JWT claim related to the user ID
+        private int GetCurrentUserId()
+        {
+            // Get the User Id from the claim and then parse it as an integer.
+            return int.Parse(User.Claims.FirstOrDefault(claim => claim.Type == "Id").Value);
         }
     }
 }

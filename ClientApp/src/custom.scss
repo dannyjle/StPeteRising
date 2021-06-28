@@ -150,7 +150,9 @@ a,
 .spr-logo,
 h2,
 .dtsp-skyline,
-nav {
+nav,
+h4,
+.submit-error {
   display: flex;
   justify-content: center;
 }
@@ -161,6 +163,13 @@ h1 {
 
 h5 {
   text-decoration: underline;
+}
+
+h4,
+.submit-error {
+  font-style: italic;
+  opacity: 75%;
+  font-size: 2rem;
 }
 
 form {

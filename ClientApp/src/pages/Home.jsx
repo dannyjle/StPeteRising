@@ -35,6 +35,7 @@ export function Home() {
           }}
         ></input>
       </form>
+      <h4>Projects List</h4>
       <main className="results">
         {projects.map((project) => (
           <dl key={project.id} className="project-results">
