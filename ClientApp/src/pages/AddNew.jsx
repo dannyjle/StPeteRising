@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { authHeader } from '../auth'
+import { useDropzone } from 'react-dropzone'
 
 export function AddNew() {
   const [newProject, setNewProject] = useState({
@@ -12,10 +13,18 @@ export function AddNew() {
     units: '',
     completion: '',
     website: '',
+    photoURL: '',
   })
 
   const [errorMessage, setErrorMessage] = useState()
+
   const history = useHistory()
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop: onDropFile,
+  })
+
+  const [isUploading, setIsUploading] = useState(false)
 
   function handleStringFieldChange(event) {
     const value = event.target.value
@@ -47,12 +56,71 @@ export function AddNew() {
 
     if (response.status === 401) {
       // @ts-ignore
-      setErrorMessage('Not Authorized')
+      setErrorMessage('!!!NOT AUTHORIZED!!!')
     } else {
       if (response.ok) {
         history.push('/')
       }
     }
+  }
+
+  async function onDropFile(acceptedFiles) {
+    // Do something with the files
+    const fileToUpload = acceptedFiles[0]
+    console.log(fileToUpload)
+    setIsUploading(true)
+
+    // Create a formData object so we can send this
+    // to the API that is expecting som form data.
+    const formData = new FormData()
+
+    // Append a field that is the form upload itself
+    formData.append('file', fileToUpload)
+
+    try {
+      // Use fetch to send an authorization header and
+      // a body containing the form data with the file
+      const response = await fetch('/api/Uploads', {
+        method: 'POST',
+        headers: {
+          ...authHeader(),
+        },
+        body: formData,
+      })
+
+      // If we receive a 200 OK response, set the
+      // URL of the photo in our state so that it is
+      // sent along when creating the restaurant,
+      // otherwise show an error
+      if (response.status === 200) {
+        const apiResponse = await response.json()
+
+        const url = apiResponse.url
+
+        // @ts-ignore
+        setNewProject({ ...newProject, photoURL: url })
+      } else {
+        // @ts-ignore
+        setErrorMessage('!!!UNABLE TO UPLOAD IMAGE!!!')
+      }
+    } catch {
+      // Catch any network errors and show the user we could not process their upload
+      // @ts-ignore
+      setErrorMessage('!!!UNABLE TO UPLOAD IMAGE!!!')
+    }
+
+    setIsUploading(false)
+  }
+
+  let dropZoneMessage =
+    'CLICK (OR DRAG A FILE) TO UPLOAD AN IMAGE OF THE DEVELOPMENT ...'
+
+  if (isUploading) {
+    dropZoneMessage = 'UPLOADING ...'
+  }
+
+  if (isDragActive) {
+    dropZoneMessage = 'DROP THE FILE HERE ...'
   }
 
   return (
@@ -138,12 +206,23 @@ export function AddNew() {
             />
           </p>
         </section>
-        <div className="picture">
-          <p className="form-input">
-            <label htmlFor="picture">Picture: </label>
-            <input className="img-select" type="file" name="picture" />
-          </p>
-        </div>
+        <section>
+          {newProject.photoURL ? (
+            <p>
+              <img
+                alt="Development Pic"
+                width={200}
+                src={newProject.photoURL}
+              />
+            </p>
+          ) : null}
+          <div className="file-drop-zone">
+            <div {...getRootProps()}>
+              <input {...getInputProps()} />
+              {dropZoneMessage}
+            </div>
+          </div>
+        </section>
         <p>
           <input className="submit" type="submit" value="Submit" />
         </p>

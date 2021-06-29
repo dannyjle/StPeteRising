@@ -60,13 +60,15 @@ body {
   }
 
   .image-uploads {
-    padding-top: 10rem;
+    padding-top: 11rem;
+    padding-bottom: 3rem;
   }
 }
 
 @media screen and (min-width: 376px) {
   .dtsp-skyline {
     width: 1600px;
+    opacity: 0.8;
   }
 
   .more-button {
@@ -94,14 +96,19 @@ body {
 
 @media screen and (min-width: 875px) {
   .map {
-    padding-left: 35rem;
-    padding-right: 35rem;
+    padding-left: 40rem;
+    padding-right: 40rem;
     padding-top: 1rem;
     padding-bottom: 15rem;
   }
 
+  .dtsp-skyline {
+    opacity: 0.7;
+  }
+
   .image-uploads {
-    padding-top: 15rem;
+    padding-top: 7rem;
+    padding-bottom: 3rem;
   }
 }
 
@@ -347,8 +354,12 @@ dd {
   padding-left: 10px;
 }
 
-.picture {
-  padding-left: 1.5rem;
+.file-drop-zone {
+  padding: 2rem;
+  text-align: center;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
 }
 
 .submit {
@@ -359,4 +370,5 @@ dd {
   font-weight: bold;
   height: 39px;
   width: 10rem;
+  margin-top: 0.8rem;
 }

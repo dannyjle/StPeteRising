@@ -14,6 +14,7 @@ export function Project() {
     website: '',
     latitude: 0,
     longitude: 0,
+    photoURL: '',
   })
 
   const [selectedMapProject, setSelectedMapProject] = useState(null)
@@ -85,7 +86,7 @@ export function Project() {
               {...viewport}
               onViewportChange={setViewport}
               style={{ position: 'absolute' }}
-              width="70%"
+              width="80%"
               height="35%"
               mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
             >
@@ -120,7 +121,11 @@ export function Project() {
               </Marker>
             </ReactMapGL>
           </div>
-          <div className="image-uploads">IMAGES GO HERE</div>
+          <div className="image-uploads">
+            {project.photoURL ? (
+              <img alt="Development Pic" width={300} src={project.photoURL} />
+            ) : null}
+          </div>
         </dl>
       </main>
     </>
