@@ -24,11 +24,11 @@ export function Home() {
 
   return (
     <>
-      <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1"
-      />
       <form>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"
+        />
         <input
           className="search-bar"
           type="text"

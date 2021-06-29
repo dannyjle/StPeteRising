@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import { Link, useHistory, useParams } from 'react-router-dom'
 import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl'
-import { authHeader, getUserId } from '../auth'
+import { authHeader, getUserId, isLoggedIn } from '../auth'
 
 export function Project() {
   const [project, setProject] = useState({
@@ -45,7 +45,7 @@ export function Project() {
   async function handleDelete(event) {
     event.preventDefault()
 
-    const response = await fetch(`/api/Restaurants/${id}`, {
+    const response = await fetch(`/api/Projects/${id}`, {
       method: 'DELETE',
       headers: { 'content-type': 'application/json', ...authHeader() },
     })
@@ -149,12 +149,23 @@ export function Project() {
             </div>
           </section>
           <section>
-            {// @ts-ignore
-            project.userId === getUserId() ? (
-              <button className="delete-button" onClick={handleDelete}>
-                Delete
-              </button>
-            ) : null}
+            {
+              // @ts-ignore
+              isLoggedIn() && project.userId === getUserId() ? (
+                <button className="edit-button">
+                  <a href={`/Projects/${id}/edit`}>Edit</a>
+                </button>
+              ) : null
+            }
+
+            {
+              // @ts-ignore
+              isLoggedIn() && project.userId === getUserId() ? (
+                <button className="delete-button" onClick={handleDelete}>
+                  Delete
+                </button>
+              ) : null
+            }
           </section>
         </dl>
       </main>

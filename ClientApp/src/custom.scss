@@ -36,7 +36,8 @@ body {
     font-weight: lighter;
   }
 
-  .delete-button {
+  .delete-button,
+  .edit-button {
     padding: 0.5rem;
     margin: 0.5rem;
     background-color: black;
@@ -47,6 +48,10 @@ body {
     text-align: center;
     text-decoration: none;
     font-size: 17px;
+  }
+
+  .edit-button a {
+    text-decoration: none;
   }
 
   .more-button a {
@@ -63,9 +68,15 @@ body {
   }
 
   .delete-button:hover,
-  .delete-button:active {
+  .delete-button:active,
+  .edit-button a:hover,
+  .edit-button a:active {
     color: white;
     text-decoration: underline;
+  }
+  .edit-button a:link,
+  .edit-button a:visited {
+    color: white;
   }
 
   .form-input {
@@ -96,7 +107,8 @@ body {
     width: 5rem;
   }
 
-  .delete-button {
+  .delete-button,
+  .edit-button {
     padding: 0.5rem;
     margin: 1rem;
     background-color: black;
@@ -123,7 +135,9 @@ body {
   }
 
   .delete-button:hover,
-  .delete-button:active {
+  .delete-button:active,
+  .edit-button:hover,
+  .edit-button:active {
     text-decoration: underline;
   }
 

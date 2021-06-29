@@ -1,10 +1,10 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { useHistory, useParams } from 'react-router-dom'
 import { authHeader } from '../auth'
 import { useDropzone } from 'react-dropzone'
 
-export function AddNew() {
-  const [newProject, setNewProject] = useState({
+export function EditProject() {
+  const [editProject, setEditProject] = useState({
     name: '',
     status: '',
     address: '',
@@ -16,13 +16,27 @@ export function AddNew() {
     photoURL: '',
   })
 
-  const [errorMessage, setErrorMessage] = useState()
-
   const history = useHistory()
+  const params = useParams()
+  // @ts-ignore
+  const id = params.id
+
+  const [errorMessage, setErrorMessage] = useState()
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: onDropFile,
   })
+
+  useEffect(() => {
+    async function fetchProject() {
+      const response = await fetch(`/api/Projects/${id}`)
+      if (response.ok) {
+        const apiData = await response.json()
+        setEditProject(apiData)
+      }
+    }
+    fetchProject()
+  }, [id])
 
   const [isUploading, setIsUploading] = useState(false)
 
@@ -30,9 +44,9 @@ export function AddNew() {
     const value = event.target.value
     const fieldName = event.target.name
 
-    const updatedProject = { ...newProject, [fieldName]: value }
+    const updatedProject = { ...editProject, [fieldName]: value }
 
-    setNewProject(updatedProject)
+    setEditProject(updatedProject)
   }
 
   function handleIntegerFieldChange(event) {
@@ -40,18 +54,18 @@ export function AddNew() {
 
     const fieldName = event.target.name
 
-    const updatedProject = { ...newProject, [fieldName]: value }
+    const updatedProject = { ...editProject, [fieldName]: value }
 
-    setNewProject(updatedProject)
+    setEditProject(updatedProject)
   }
 
   async function handleFormSubmit(event) {
     event.preventDefault()
-    const response = await fetch('/api/Projects', {
-      method: 'POST',
+    const response = await fetch(`/api/Projects/${id}`, {
+      method: 'PUT',
       // send JSON ~and~ (token)
       headers: { 'content-type': 'application/json', ...authHeader() },
-      body: JSON.stringify(newProject),
+      body: JSON.stringify(editProject),
     })
 
     if (response.status === 401) {
@@ -98,7 +112,7 @@ export function AddNew() {
         const url = apiResponse.url
 
         // @ts-ignore
-        setNewProject({ ...newProject, photoURL: url })
+        setEditProject({ ...editProject, photoURL: url })
       } else {
         // @ts-ignore
         setErrorMessage('!!!UNABLE TO UPLOAD IMAGE!!!')
@@ -123,10 +137,15 @@ export function AddNew() {
     dropZoneMessage = 'DROP THE FILE HERE ...'
   }
 
+  // @ts-ignore
+  if (!editProject.id) {
+    return <></>
+  }
+
   return (
     <>
       <section>
-        <h5>Add New Project:</h5>
+        <h5>Edit Project:</h5>
       </section>
       {errorMessage ? <p className="submit-error">{errorMessage}</p> : null}
       <form className="add-new" onSubmit={handleFormSubmit}>
@@ -137,7 +156,7 @@ export function AddNew() {
               required
               type="text"
               name="name"
-              value={newProject.name}
+              value={editProject.name}
               onChange={handleStringFieldChange}
             />
           </p>
@@ -146,7 +165,7 @@ export function AddNew() {
             <input
               type="text"
               name="status"
-              value={newProject.status}
+              value={editProject.status}
               onChange={handleStringFieldChange}
             ></input>
           </p>
@@ -155,7 +174,7 @@ export function AddNew() {
             <input
               type="text"
               name="address"
-              value={newProject.address}
+              value={editProject.address}
               onChange={handleStringFieldChange}
             ></input>
           </p>
@@ -166,7 +185,7 @@ export function AddNew() {
             <input
               type="text"
               name="class"
-              value={newProject.class}
+              value={editProject.class}
               onChange={handleStringFieldChange}
             />
           </p>
@@ -175,7 +194,7 @@ export function AddNew() {
             <input
               type="text"
               name="floor"
-              value={newProject.floor}
+              value={editProject.floor}
               onChange={handleIntegerFieldChange}
             />
           </p>
@@ -184,7 +203,7 @@ export function AddNew() {
             <input
               type="text"
               name="units"
-              value={newProject.units}
+              value={editProject.units}
               onChange={handleIntegerFieldChange}
             />
           </p>
@@ -195,7 +214,7 @@ export function AddNew() {
             <input
               type="text"
               name="completion"
-              value={newProject.completion}
+              value={editProject.completion}
               onChange={handleStringFieldChange}
             />
           </p>
@@ -204,18 +223,18 @@ export function AddNew() {
             <input
               type="text"
               name="website"
-              value={newProject.website}
+              value={editProject.website}
               onChange={handleStringFieldChange}
             />
           </p>
         </section>
         <section>
-          {newProject.photoURL ? (
+          {editProject.photoURL ? (
             <p>
               <img
                 alt="Development Pic"
                 width={200}
-                src={newProject.photoURL}
+                src={editProject.photoURL}
               />
             </p>
           ) : null}

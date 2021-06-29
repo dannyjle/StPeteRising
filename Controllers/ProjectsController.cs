@@ -98,6 +98,21 @@ namespace StPeteRising.Controllers
                 return BadRequest();
             }
 
+            // Find this project by looking for the specific id
+            var projectBelongsToUser = await _context.Projects.AnyAsync(project => project.Id == id && project.UserId == GetCurrentUserId());
+            if (!projectBelongsToUser)
+            {
+                // Make a custom error response
+                var response = new
+                {
+                    status = 401,
+                    errors = new List<string>() { "Not Authorized" }
+                };
+                // Return our error with the custom response
+                return Unauthorized(response);
+            }
+
+
             // Tell the database to consider everything in project to be _updated_ values. When
             // the save happens the database will _replace_ the values in the database with the ones from project
             _context.Entry(project).State = EntityState.Modified;

@@ -35,7 +35,7 @@ export function Layout({ children }) {
             </a>
           </h1>
           <nav className="nav">
-            <Link to="/">Home</Link>
+            <a href="/">Home</a>
             {isLoggedIn() ? <Link to="/add">Add Project</Link> : null}
             {isLoggedIn() ? null : <Link to="/signup">Sign Up</Link>}
             {isLoggedIn() ? null : <Link to="/login">Login</Link>}

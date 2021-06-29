@@ -1,7 +1,15 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import './custom.scss'
-import { Home, Project, AddNew, Login, Layout, SignUp } from './pages'
+import {
+  Home,
+  Project,
+  AddNew,
+  Login,
+  Layout,
+  SignUp,
+  EditProject,
+} from './pages'
 
 export function App() {
   return (
@@ -21,6 +29,9 @@ export function App() {
         </Route>
         <Route exact path="/add">
           <AddNew />
+        </Route>
+        <Route exact path="/projects/:id/edit">
+          <EditProject />
         </Route>
         <Route path="*">Not Found</Route>
       </Switch>
