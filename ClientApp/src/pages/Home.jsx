@@ -64,9 +64,11 @@ export function Home() {
               </dt>
               <dd>{project.completion}</dd>
             </section>
-            <button className="more-button">
-              <a href={`/project/${project.id}`}>More</a>
-            </button>
+            <p>
+              <button className="more-button">
+                <a href={`/project/${project.id}`}>More</a>
+              </button>
+            </p>
           </dl>
         ))}
       </main>

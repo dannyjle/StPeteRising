@@ -24,13 +24,13 @@ body {
   .spr-logo,
   .dtsp-skyline,
   .results {
-    width: 375px;
+    width: 100vw;
   }
 
   .more-button {
     padding: 0.5rem;
     margin: 1rem;
-    margin-left: 9.5rem;
+    margin-left: 9rem;
     background-color: black;
     border: none;
     width: 5rem;
@@ -88,7 +88,7 @@ body {
   .more-button {
     padding: 0.5rem;
     margin: 1rem;
-    margin-left: 13rem;
+    margin-left: 12.5rem;
     background-color: black;
     border: none;
     width: 5rem;
@@ -131,9 +131,9 @@ body {
   }
 }
 
-@media screen and (min-width: 535px) {
+@media screen and (min-width: 490px) {
   .dtsp-skyline {
-    width: 1600px;
+    width: 100vw;
     opacity: 0.8;
   }
 
