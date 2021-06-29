@@ -12,7 +12,7 @@ export function Home() {
             ? '/api/projects'
             : `/api/projects?filter=${filterText}`
         const response = await fetch(url)
-        if (response.status === 200) {
+        if (response.ok) {
           const json = await response.json()
           setProjects(json)
         }

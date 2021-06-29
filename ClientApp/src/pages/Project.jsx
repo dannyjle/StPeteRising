@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl'
+import { authHeader, getUserId } from '../auth'
 
 export function Project() {
   const [project, setProject] = useState({
@@ -25,6 +26,7 @@ export function Project() {
     zoom: 9.8,
   })
 
+  const history = useHistory()
   const params = useParams()
   // @ts-ignore
   const id = params.id
@@ -39,6 +41,19 @@ export function Project() {
     }
     fetchProject()
   }, [id])
+
+  async function handleDelete(event) {
+    event.preventDefault()
+
+    const response = await fetch(`/api/Restaurants/${id}`, {
+      method: 'DELETE',
+      headers: { 'content-type': 'application/json', ...authHeader() },
+    })
+
+    if (response.ok) {
+      history.push('/')
+    }
+  }
 
   return (
     <>
@@ -81,51 +96,66 @@ export function Project() {
             </dt>
             <dd>{project.address}</dd>
           </section>
-          <div className="map">
-            <ReactMapGL
-              {...viewport}
-              onViewportChange={setViewport}
-              style={{ position: 'absolute' }}
-              width="80%"
-              height="35%"
-              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
-            >
-              <div style={{ position: 'absolute', left: 10 }}>
-                <NavigationControl />
-              </div>
+          <section>
+            <div className="map">
+              <ReactMapGL
+                {...viewport}
+                onViewportChange={setViewport}
+                style={{ position: 'absolute' }}
+                width="80%"
+                height="35%"
+                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_TOKEN}
+              >
+                <div style={{ position: 'absolute', left: 10 }}>
+                  <NavigationControl />
+                </div>
 
-              {selectedMapProject ? (
-                <Popup
-                  latitude={selectedMapProject.latitude}
-                  longitude={selectedMapProject.longitude}
-                  closeButton={true}
-                  closeOnClick={false}
-                  onClose={() => setSelectedMapProject(null)}
-                  offsetTop={-5}
+                {selectedMapProject ? (
+                  <Popup
+                    latitude={selectedMapProject.latitude}
+                    longitude={selectedMapProject.longitude}
+                    closeButton={true}
+                    closeOnClick={false}
+                    onClose={() => setSelectedMapProject(null)}
+                    offsetTop={-5}
+                  >
+                    <div>
+                      <p>{selectedMapProject.name}</p>
+                      <p>{selectedMapProject.description}</p>
+                    </div>
+                  </Popup>
+                ) : null}
+
+                <Marker
+                  latitude={project.latitude}
+                  longitude={project.longitude}
                 >
-                  <div>
-                    <p>{selectedMapProject.name}</p>
-                    <p>{selectedMapProject.description}</p>
-                  </div>
-                </Popup>
+                  <span
+                    role="img"
+                    aria-label="pin"
+                    onClick={() => setSelectedMapProject(project)}
+                  >
+                    📍
+                  </span>
+                </Marker>
+              </ReactMapGL>
+            </div>
+          </section>
+          <section>
+            <div className="image-uploads">
+              {project.photoURL ? (
+                <img alt="Development Pic" width={300} src={project.photoURL} />
               ) : null}
-
-              <Marker latitude={project.latitude} longitude={project.longitude}>
-                <span
-                  role="img"
-                  aria-label="pin"
-                  onClick={() => setSelectedMapProject(project)}
-                >
-                  📍
-                </span>
-              </Marker>
-            </ReactMapGL>
-          </div>
-          <div className="image-uploads">
-            {project.photoURL ? (
-              <img alt="Development Pic" width={300} src={project.photoURL} />
+            </div>
+          </section>
+          <section>
+            {// @ts-ignore
+            project.userId === getUserId() ? (
+              <button className="delete-button" onClick={handleDelete}>
+                Delete
+              </button>
             ) : null}
-          </div>
+          </section>
         </dl>
       </main>
     </>

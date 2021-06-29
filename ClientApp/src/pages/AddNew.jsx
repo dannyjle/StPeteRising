@@ -92,7 +92,7 @@ export function AddNew() {
       // URL of the photo in our state so that it is
       // sent along when creating the restaurant,
       // otherwise show an error
-      if (response.status === 200) {
+      if (response.ok) {
         const apiResponse = await response.json()
 
         const url = apiResponse.url
