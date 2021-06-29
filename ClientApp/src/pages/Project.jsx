@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import ReactMapGL, { Marker, NavigationControl } from 'react-map-gl'
+import ReactMapGL, { Marker, NavigationControl, Popup } from 'react-map-gl'
 
 export function Project() {
   const [project, setProject] = useState({
@@ -15,6 +15,8 @@ export function Project() {
     latitude: 0,
     longitude: 0,
   })
+
+  const [selectedMapProject, setSelectedMapProject] = useState(null)
 
   const [viewport, setViewport] = useState({
     latitude: 27.77101804911986,
@@ -90,17 +92,32 @@ export function Project() {
               <div style={{ position: 'absolute', left: 10 }}>
                 <NavigationControl />
               </div>
-              {/* {project.map((development) => (
-                <Marker
-                  key={development.id}
-                  latitude={development.latitude}
-                  longitude={development.longitude}
+
+              {selectedMapProject ? (
+                <Popup
+                  latitude={selectedMapProject.latitude}
+                  longitude={selectedMapProject.longitude}
+                  closeButton={true}
+                  closeOnClick={false}
+                  onClose={() => setSelectedMapProject(null)}
+                  offsetTop={-5}
                 >
-                  <span role="img" aria-label="sun">
-                    ☀️
-                  </span>
-                </Marker>
-              ))} */}
+                  <div>
+                    <p>{selectedMapProject.name}</p>
+                    <p>{selectedMapProject.description}</p>
+                  </div>
+                </Popup>
+              ) : null}
+
+              <Marker latitude={project.latitude} longitude={project.longitude}>
+                <span
+                  role="img"
+                  aria-label="pin"
+                  onClick={() => setSelectedMapProject(project)}
+                >
+                  📍
+                </span>
+              </Marker>
             </ReactMapGL>
           </div>
           <div className="image-uploads">IMAGES GO HERE</div>
