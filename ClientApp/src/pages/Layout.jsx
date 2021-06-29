@@ -29,7 +29,7 @@ export function Layout({ children }) {
                 className="spr-logo"
                 src={spr}
                 alt="St.Pete Rising Logo"
-                width="475"
+                width="375"
                 height="225"
               />
             </a>
@@ -50,7 +50,7 @@ export function Layout({ children }) {
               className="dtsp-skyline"
               src={dtspSky}
               alt="nav dropdown"
-              width="495"
+              width="375"
               height="200"
             />
             {isLoggedIn() ? (

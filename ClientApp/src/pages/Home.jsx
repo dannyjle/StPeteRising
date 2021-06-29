@@ -64,11 +64,11 @@ export function Home() {
               </dt>
               <dd>{project.completion}</dd>
             </section>
-            <p>
+            <section>
               <button className="more-button">
                 <a href={`/project/${project.id}`}>More</a>
               </button>
-            </p>
+            </section>
           </dl>
         ))}
       </main>
