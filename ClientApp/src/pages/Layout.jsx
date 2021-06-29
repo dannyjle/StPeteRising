@@ -99,12 +99,14 @@ export function Layout({ children }) {
             </a>
           </div>
         </footer>
-        <div className="footer-link">
-          <a href="https://stpeterising.com/terms">Terms of Use</a>
-          <a href="https://stpeterising.com/privacy">
-            Privacy Policy © 2021 St. Pete Rising, LLC
-          </a>
-        </div>
+        <section>
+          <div className="footer-link">
+            <a href="https://stpeterising.com/terms">Terms of Use</a>
+            <a href="https://stpeterising.com/privacy">
+              Privacy Policy © 2021 St. Pete Rising, LLC
+            </a>
+          </div>
+        </section>
       </div>
     </>
   )
