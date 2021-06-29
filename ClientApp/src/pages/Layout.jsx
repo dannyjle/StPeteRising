@@ -50,7 +50,7 @@ export function Layout({ children }) {
               className="dtsp-skyline"
               src={dtspSky}
               alt="nav dropdown"
-              width="375"
+              width="395"
               height="200"
             />
             {isLoggedIn() ? (
