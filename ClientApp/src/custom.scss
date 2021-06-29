@@ -85,11 +85,6 @@ body {
 }
 
 @media screen and (min-width: 376px) {
-  .dtsp-skyline {
-    width: 1600px;
-    opacity: 0.8;
-  }
-
   .more-button {
     padding: 0.5rem;
     margin: 1rem;
@@ -137,6 +132,11 @@ body {
 }
 
 @media screen and (min-width: 535px) {
+  .dtsp-skyline {
+    width: 1600px;
+    opacity: 0.8;
+  }
+
   .map {
     padding-left: 40rem;
     padding-right: 40rem;
