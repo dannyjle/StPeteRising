@@ -219,6 +219,8 @@ export function AddNew() {
                 />
               </p>
             ) : null}
+          </section>
+          <section>
             <div className="file-drop-zone">
               <div {...getRootProps()}>
                 <input {...getInputProps()} />
