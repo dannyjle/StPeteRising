@@ -24,11 +24,13 @@ export function Home() {
 
   return (
     <>
+      {/* code to prevent zoom in for mobile view */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
+      <h4>Projects List</h4>
       <form>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1"
-        />
         <input
           className="search-bar"
           type="text"
@@ -39,7 +41,6 @@ export function Home() {
           }}
         ></input>
       </form>
-      <h4>Projects List</h4>
       <main className="results">
         {projects.map((project) => (
           <dl key={project.id} className="project-results">
@@ -48,7 +49,7 @@ export function Home() {
               <div className="subject">Status:</div>
             </dt>
             <dd className="project-status">{project.status}</dd>
-            <section>
+            <div className="container">
               <dt>
                 <div className="subject">Class:</div>
               </dt>
@@ -57,8 +58,8 @@ export function Home() {
                 <div className="subject">Floor:</div>
               </dt>
               <dd>{project.floor}</dd>
-            </section>
-            <section>
+            </div>
+            <div className="container">
               <dt>
                 <div className="subject">Units:</div>
               </dt>
@@ -67,12 +68,12 @@ export function Home() {
                 <div className="subject">Completion:</div>
               </dt>
               <dd>{project.completion}</dd>
-            </section>
-            <section>
+            </div>
+            <div className="container">
               <button className="more-button">
                 <a href={`/project/${project.id}`}>More</a>
               </button>
-            </section>
+            </div>
           </dl>
         ))}
       </main>

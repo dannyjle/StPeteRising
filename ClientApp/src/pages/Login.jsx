@@ -36,7 +36,7 @@ export function Login() {
   return (
     <>
       <form className="login" onSubmit={handleFormSubmit}>
-        <h5>Admin Login</h5>
+        <h5>User Login</h5>
         {errorMessage ? <p>{errorMessage}</p> : null}
         <label>Email:</label>
         <input

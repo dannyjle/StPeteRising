@@ -144,12 +144,12 @@ export function EditProject() {
 
   return (
     <>
-      <section>
+      <div className="container">
         <h5>Edit Project:</h5>
-      </section>
+      </div>
       {errorMessage ? <p className="submit-error">{errorMessage}</p> : null}
       <form className="add-new" onSubmit={handleFormSubmit}>
-        <section>
+        <div className="container">
           <p className="form-input">
             <label htmlFor="name">Name: </label>
             <input
@@ -178,8 +178,8 @@ export function EditProject() {
               onChange={handleStringFieldChange}
             ></input>
           </p>
-        </section>
-        <section>
+        </div>
+        <div className="container">
           <p className="form-input">
             <label htmlFor="class">Class: </label>
             <input
@@ -207,8 +207,8 @@ export function EditProject() {
               onChange={handleIntegerFieldChange}
             />
           </p>
-        </section>
-        <section>
+        </div>
+        <div className="container">
           <p className="form-input">
             <label htmlFor="completion">Completion: </label>
             <input
@@ -227,27 +227,34 @@ export function EditProject() {
               onChange={handleStringFieldChange}
             />
           </p>
-        </section>
-        <section>
-          {editProject.photoURL ? (
-            <p>
-              <img
-                alt="Development Pic"
-                width={200}
-                src={editProject.photoURL}
-              />
-            </p>
-          ) : null}
+        </div>
+        <div className="container">
           <div className="file-drop-zone">
             <div {...getRootProps()}>
               <input {...getInputProps()} />
               {dropZoneMessage}
             </div>
+            <div className="container">
+              <p>
+                {editProject.photoURL ? (
+                  <p>
+                    <img
+                      className="upload-display"
+                      alt="Development Pic"
+                      width={200}
+                      src={editProject.photoURL}
+                    />
+                  </p>
+                ) : null}
+              </p>
+            </div>
           </div>
-        </section>
-        <p>
-          <input className="submit" type="submit" value="Submit" />
-        </p>
+        </div>
+        <div className="submit-button">
+          <p>
+            <input className="submit" type="submit" value="Submit" />
+          </p>
+        </div>
       </form>
     </>
   )

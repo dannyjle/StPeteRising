@@ -20,9 +20,7 @@ export function Layout({ children }) {
     <>
       <div className="layout">
         <header>
-          <div className="spr-img">
-            <div className="container"></div>
-          </div>
+          <div className="spr-img"></div>
           <h1>
             <a href="/">
               <img
@@ -99,14 +97,14 @@ export function Layout({ children }) {
             </a>
           </div>
         </footer>
-        <section>
+        <div className="container">
           <div className="footer-link">
             <a href="https://stpeterising.com/terms">Terms of Use</a>
             <a href="https://stpeterising.com/privacy">
               Privacy Policy © 2021 St. Pete Rising, LLC
             </a>
           </div>
-        </section>
+        </div>
       </div>
     </>
   )

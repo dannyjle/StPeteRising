@@ -64,7 +64,7 @@ export function Project() {
             <div className="subject">Status:</div>{' '}
           </dt>
           <dd className="project-status">{project.status}</dd>{' '}
-          <section>
+          <div className="container">
             <dt>
               <div className="subject">Class:</div>
             </dt>
@@ -73,8 +73,8 @@ export function Project() {
               <div className="subject">Floor:</div>
             </dt>
             <dd>{project.floor}</dd>
-          </section>
-          <section>
+          </div>
+          <div className="container">
             <dt>
               <div className="subject">Units:</div>
             </dt>
@@ -83,20 +83,20 @@ export function Project() {
               <div className="subject">Completion:</div>{' '}
             </dt>
             <dd>{project.completion}</dd>
-          </section>
-          <section>
+          </div>
+          <div className="container">
             <dt>
               <div className="subject">Website:</div>
             </dt>
             <dd>{project.website}</dd>
-          </section>
-          <section>
+          </div>
+          <div className="container">
             <dt>
               <div className="subject">Location:</div>
             </dt>
             <dd>{project.address}</dd>
-          </section>
-          <section>
+          </div>
+          <div className="container">
             <div className="map">
               <ReactMapGL
                 {...viewport}
@@ -140,15 +140,15 @@ export function Project() {
                 </Marker>
               </ReactMapGL>
             </div>
-          </section>
-          <section>
+          </div>
+          <div className="container">
             <div className="image-uploads">
               {project.photoURL ? (
                 <img alt="Development Pic" width={300} src={project.photoURL} />
               ) : null}
             </div>
-          </section>
-          <section>
+          </div>
+          <div className="container">
             {
               // @ts-ignore
               isLoggedIn() && project.userId === getUserId() ? (
@@ -166,7 +166,7 @@ export function Project() {
                 </button>
               ) : null
             }
-          </section>
+          </div>
         </dl>
       </main>
     </>

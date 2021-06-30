@@ -124,12 +124,12 @@ export function AddNew() {
 
   return (
     <>
-      <section>
-        <h5>Add New Project:</h5>
-      </section>
+      <div className="container">
+        <h5>Add New Project</h5>
+      </div>
       {errorMessage ? <p className="submit-error">{errorMessage}</p> : null}
       <form className="add-new" onSubmit={handleFormSubmit}>
-        <section>
+        <div className="container">
           <p className="form-input">
             <label htmlFor="name">Name: </label>
             <input
@@ -158,8 +158,8 @@ export function AddNew() {
               onChange={handleStringFieldChange}
             ></input>
           </p>
-        </section>
-        <section>
+        </div>
+        <div className="container">
           <p className="form-input">
             <label htmlFor="class">Class: </label>
             <input
@@ -187,8 +187,8 @@ export function AddNew() {
               onChange={handleIntegerFieldChange}
             />
           </p>
-        </section>
-        <section>
+        </div>
+        <div className="container">
           <p className="form-input">
             <label htmlFor="completion">Completion: </label>
             <input
@@ -207,14 +207,14 @@ export function AddNew() {
               onChange={handleStringFieldChange}
             />
           </p>
-        </section>
-        <section>
+        </div>
+        <div className="drag-drop">
           <div className="file-drop-zone">
             <div {...getRootProps()}>
               <input {...getInputProps()} />
               {dropZoneMessage}
             </div>
-            <section>
+            <div className="container">
               <p>
                 {newProject.photoURL ? (
                   <p>
@@ -227,12 +227,12 @@ export function AddNew() {
                   </p>
                 ) : null}
               </p>
-            </section>
+            </div>
           </div>
-          <p>
-            <input className="submit" type="submit" value="Submit" />
-          </p>
-        </section>
+        </div>
+        <div className="submit-button">
+          <input className="submit" type="submit" value="Submit" />
+        </div>
       </form>
     </>
   )
