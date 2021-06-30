@@ -209,24 +209,25 @@ export function AddNew() {
           </p>
         </section>
         <section>
-          <p className="upload-display">
-            {newProject.photoURL ? (
-              <p>
-                <img
-                  alt="Development Pic"
-                  width={200}
-                  src={newProject.photoURL}
-                />
-              </p>
-            ) : null}
-          </p>
-        </section>
-        <section>
           <div className="file-drop-zone">
             <div {...getRootProps()}>
               <input {...getInputProps()} />
               {dropZoneMessage}
             </div>
+            <section>
+              <p>
+                {newProject.photoURL ? (
+                  <p>
+                    <img
+                      className="upload-display"
+                      alt="Development Pic"
+                      width={200}
+                      src={newProject.photoURL}
+                    />
+                  </p>
+                ) : null}
+              </p>
+            </section>
           </div>
           <p>
             <input className="submit" type="submit" value="Submit" />
