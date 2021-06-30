@@ -112,8 +112,7 @@ export function AddNew() {
     setIsUploading(false)
   }
 
-  let dropZoneMessage =
-    'CLICK (OR DRAG A FILE) TO UPLOAD AN IMAGE OF THE DEVELOPMENT ...'
+  let dropZoneMessage = 'DRAG A FILE TO UPLOAD AN IMAGE OF THE DEVELOPMENT ...'
 
   if (isUploading) {
     dropZoneMessage = 'UPLOADING ...'
