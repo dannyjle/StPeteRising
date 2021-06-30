@@ -128,108 +128,110 @@ export function AddNew() {
       <section>
         <h5>Add New Project:</h5>
       </section>
-      {errorMessage ? <p className="submit-error">{errorMessage}</p> : null}
-      <form className="add-new" onSubmit={handleFormSubmit}>
-        <section>
-          <p className="form-input">
-            <label htmlFor="name">Name: </label>
-            <input
-              required
-              type="text"
-              name="name"
-              value={newProject.name}
-              onChange={handleStringFieldChange}
-            />
-          </p>
-          <p className="form-input">
-            <label htmlFor="status">Status: </label>
-            <input
-              type="text"
-              name="status"
-              value={newProject.status}
-              onChange={handleStringFieldChange}
-            ></input>
-          </p>
-          <p className="form-input">
-            <label htmlFor="address">Address: </label>
-            <input
-              type="text"
-              name="address"
-              value={newProject.address}
-              onChange={handleStringFieldChange}
-            ></input>
-          </p>
-        </section>
-        <section>
-          <p className="form-input">
-            <label htmlFor="class">Class: </label>
-            <input
-              type="text"
-              name="class"
-              value={newProject.class}
-              onChange={handleStringFieldChange}
-            />
-          </p>
-          <p className="form-input">
-            <label htmlFor="floor">Floor: </label>
-            <input
-              type="text"
-              name="floor"
-              value={newProject.floor}
-              onChange={handleIntegerFieldChange}
-            />
-          </p>
-          <p className="form-input">
-            <label htmlFor="units">Units: </label>
-            <input
-              type="text"
-              name="units"
-              value={newProject.units}
-              onChange={handleIntegerFieldChange}
-            />
-          </p>
-        </section>
-        <section>
-          <p className="form-input">
-            <label htmlFor="completion">Completion: </label>
-            <input
-              type="text"
-              name="completion"
-              value={newProject.completion}
-              onChange={handleStringFieldChange}
-            />
-          </p>
-          <p className="form-input">
-            <label htmlFor="website">Website: </label>
-            <input
-              type="text"
-              name="website"
-              value={newProject.website}
-              onChange={handleStringFieldChange}
-            />
-          </p>
-        </section>
-        <section>
-          {newProject.photoURL ? (
-            <p>
-              <img
-                alt="Development Pic"
-                width={200}
-                src={newProject.photoURL}
+      <section>
+        {errorMessage ? <p className="submit-error">{errorMessage}</p> : null}
+        <form className="add-new" onSubmit={handleFormSubmit}>
+          <section>
+            <p className="form-input">
+              <label htmlFor="name">Name: </label>
+              <input
+                required
+                type="text"
+                name="name"
+                value={newProject.name}
+                onChange={handleStringFieldChange}
               />
             </p>
-          ) : null}
-          <div className="file-drop-zone">
-            <div {...getRootProps()}>
-              <input {...getInputProps()} />
-              {dropZoneMessage}
+            <p className="form-input">
+              <label htmlFor="status">Status: </label>
+              <input
+                type="text"
+                name="status"
+                value={newProject.status}
+                onChange={handleStringFieldChange}
+              ></input>
+            </p>
+            <p className="form-input">
+              <label htmlFor="address">Address: </label>
+              <input
+                type="text"
+                name="address"
+                value={newProject.address}
+                onChange={handleStringFieldChange}
+              ></input>
+            </p>
+          </section>
+          <section>
+            <p className="form-input">
+              <label htmlFor="class">Class: </label>
+              <input
+                type="text"
+                name="class"
+                value={newProject.class}
+                onChange={handleStringFieldChange}
+              />
+            </p>
+            <p className="form-input">
+              <label htmlFor="floor">Floor: </label>
+              <input
+                type="text"
+                name="floor"
+                value={newProject.floor}
+                onChange={handleIntegerFieldChange}
+              />
+            </p>
+            <p className="form-input">
+              <label htmlFor="units">Units: </label>
+              <input
+                type="text"
+                name="units"
+                value={newProject.units}
+                onChange={handleIntegerFieldChange}
+              />
+            </p>
+          </section>
+          <section>
+            <p className="form-input">
+              <label htmlFor="completion">Completion: </label>
+              <input
+                type="text"
+                name="completion"
+                value={newProject.completion}
+                onChange={handleStringFieldChange}
+              />
+            </p>
+            <p className="form-input">
+              <label htmlFor="website">Website: </label>
+              <input
+                type="text"
+                name="website"
+                value={newProject.website}
+                onChange={handleStringFieldChange}
+              />
+            </p>
+          </section>
+          <section>
+            {newProject.photoURL ? (
+              <p>
+                <img
+                  alt="Development Pic"
+                  width={200}
+                  src={newProject.photoURL}
+                />
+              </p>
+            ) : null}
+            <div className="file-drop-zone">
+              <div {...getRootProps()}>
+                <input {...getInputProps()} />
+                {dropZoneMessage}
+              </div>
             </div>
-          </div>
-        </section>
-        <p>
-          <input className="submit" type="submit" value="Submit" />
-        </p>
-      </form>
+            <p>
+              <input className="submit" type="submit" value="Submit" />
+            </p>
+          </section>
+        </form>
+      </section>
     </>
   )
 }
