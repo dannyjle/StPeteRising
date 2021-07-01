@@ -35,6 +35,11 @@ export function Login() {
 
   return (
     <>
+      {/* code to prevent zoom in for mobile view */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
       <form className="login" onSubmit={handleFormSubmit}>
         <h5>User Login</h5>
         {errorMessage ? <p>{errorMessage}</p> : null}

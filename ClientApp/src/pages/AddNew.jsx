@@ -125,6 +125,11 @@ export function AddNew() {
 
   return (
     <>
+      {/* code to prevent zoom in for mobile view */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
       <div className="container">
         <h5>Add New Project</h5>
       </div>

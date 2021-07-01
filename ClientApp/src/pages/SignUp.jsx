@@ -41,6 +41,11 @@ export function SignUp() {
 
   return (
     <>
+      {/* code to prevent zoom in for mobile view */}
+      <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1"
+      />
       <form className="signup" onSubmit={handleFormSubmit}>
         {errorMessage ? <p>{errorMessage}</p> : null}
         <h5>Add New User</h5>
