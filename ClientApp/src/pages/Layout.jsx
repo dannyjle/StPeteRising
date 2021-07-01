@@ -20,7 +20,6 @@ export function Layout({ children }) {
     <>
       <div className="layout">
         <header>
-          <div className="spr-img"></div>
           <h1>
             <a href="/">
               <img
@@ -33,7 +32,7 @@ export function Layout({ children }) {
             </a>
           </h1>
           <nav className="nav">
-            <a href="/">Home</a>
+            <Link to="/">Projects</Link>
             {isLoggedIn() ? <Link to="/add">Add Project</Link> : null}
             {isLoggedIn() ? null : <Link to="/signup">Sign Up</Link>}
             {isLoggedIn() ? null : <Link to="/login">Login</Link>}
