@@ -112,7 +112,8 @@ export function AddNew() {
     setIsUploading(false)
   }
 
-  let dropZoneMessage = 'DRAG A FILE TO UPLOAD AN IMAGE OF THE DEVELOPMENT ...'
+  let dropZoneMessage =
+    'CLICK OR DRAG A FILE TO UPLOAD AN IMAGE OF THE DEVELOPMENT ...'
 
   if (isUploading) {
     dropZoneMessage = 'UPLOADING ...'
@@ -214,25 +215,21 @@ export function AddNew() {
               <input {...getInputProps()} />
               {dropZoneMessage}
             </div>
-            <div className="container">
-              <p>
-                {newProject.photoURL ? (
-                  <p>
-                    <img
-                      className="upload-display"
-                      alt="Development Pic"
-                      width={200}
-                      src={newProject.photoURL}
-                    />
-                  </p>
-                ) : null}
-              </p>
-            </div>
+            <p>
+              {newProject.photoURL ? (
+                <p>
+                  <img
+                    className="upload-display"
+                    alt="Development Pic"
+                    width={200}
+                    src={newProject.photoURL}
+                  />
+                </p>
+              ) : null}
+            </p>
           </div>
         </div>
-        <div className="submit-button">
-          <input className="submit" type="submit" value="Submit" />
-        </div>
+        <input className="submit" type="submit" value="Submit" />
       </form>
     </>
   )

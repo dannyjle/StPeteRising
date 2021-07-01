@@ -250,11 +250,9 @@ export function EditProject() {
             </div>
           </div>
         </div>
-        <div className="submit-button">
-          <p>
-            <input className="submit" type="submit" value="Submit" />
-          </p>
-        </div>
+        <p>
+          <input className="submit" type="submit" value="Submit" />
+        </p>
       </form>
     </>
   )
